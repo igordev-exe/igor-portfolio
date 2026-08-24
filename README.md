@@ -1,3 +1,4 @@
+Meu portfólio, montado como se fosse um editor de código. Um arquivo HTML, sem build, sem dependência.
 ```
  _______________________________________________________________________
 |igor-portfolio                                                   |F]|!"|
@@ -8,9 +9,6 @@
 |~/igordev-exe $ _                                                    |_|
 |_____________________________________________________________________|/|
 ```
-
-Meu portfólio, montado como se fosse um editor de código. Um arquivo HTML, sem build, sem dependência.
-
 ```
 .-----------------------------------------------------------------------------.
 ||Es| |F1 |F2 |F3 |F4 |F5 | |F6 |F7 |F8 |F9 |F10|                  C= AMIGA   |
@@ -34,9 +32,9 @@ Meu portfólio, montado como se fosse um editor de código. Um arquivo HTML, sem
 
 O desenho veio primeiro. Montei a interface inteira no Figma antes de escrever qualquer linha: layout, paleta, hierarquia dos painéis, como cada estado deveria parecer.
 
-A exportação para HTML dá conta do que é estático. As caixas, as cores, o tipo, o espaçamento. O que ela não entrega é comportamento — o terminal que interpreta comandos, a busca fuzzy do command palette, o dobramento de código, o sticky scroll, a troca de tema, a busca em todos os arquivos. Nada disso sai de um export.
+A exportação para HTML dá conta do que é estático. As caixas, as cores, o tipo, o espaçamento. O que ela não entrega é comportamento, o terminal que interpreta comandos, a busca fuzzy do command palette, o dobramento de código, o sticky scroll, a troca de tema, a busca em todos os arquivos. Nada disso sai de um export.
 
-Essa camada eu escrevi com apoio do Claude Code, revisando e refazendo o que não servia. O desenho continua sendo meu; a IA encurtou o caminho entre o protótipo e a coisa funcionando.
+Essa camada eu escrevi com apoio do Claude Code, revisando e refazendo o que não servia. O desenho continua sendo meu, utilizei dele para entender o funcionamento do código e como ferramenta de auxilio.
 
 ## Comandos
 
@@ -66,7 +64,7 @@ Ctrl+`            terminal
 
 ## Stack
 
-HTML, CSS e JavaScript puros. Arquivo único, ~100 KB, sem framework e sem etapa de build — a única coisa externa é a fonte JetBrains Mono.
+HTML, CSS e JavaScript puros. Arquivo único, ~100 KB, sem framework e sem etapa de build, a única coisa externa é a fonte JetBrains Mono.
 
 No celular o código quebra em vez de rolar para o lado, a numeração das linhas acompanha e os menus se agrupam num botão só.
 
