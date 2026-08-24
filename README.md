@@ -1,13 +1,23 @@
 Meu portfólio, montado como se fosse um editor de código. Um arquivo HTML, sem build, sem dependência.
 ```
- _______________________________________________________________________
-|igor-portfolio                                                   |F]|!"|
-|"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""|"|
-|~/igordev-exe $ whoami                                               | |
-|Igor Alves - Engenharia de Software, UnB/FGA                         | |
-|                                                                     | |
-|~/igordev-exe $ _                                                    |_|
-|_____________________________________________________________________|/|
+.-----------------------------------------------------------------------------.
+|                                                                             |
+| .-------------------------------------------------------------------------. |
+| |  ______________________________________________________________________ | |
+| | |igor-portfolio                                                 |F]|!"| | |
+| | |""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""|"| | |
+| | |~/igordev-exe $ whoami                                             | | | |
+| | |Igor Alves - Engenharia de Software, UnB/FGA                       | | | |
+| | |                                                                   | | | |
+| | |~/igordev-exe $ _                                                  |_| | |
+| | |___________________________________________________________________|/| | |
+| `-------------------------------------------------------------------------' |
+|                                                                             |
+|  (o) PWR   (o) BRT                                      C= COMMODORE 1084S  |
+`-----------------------------------------------------------------------------'
+                             \___________________/
+                       .-------------------------------.
+                       `-------------------------------'
 ```
 ```
 .-----------------------------------------------------------------------------.
@@ -30,7 +40,7 @@ Meu portfólio, montado como se fosse um editor de código. Um arquivo HTML, sem
 
 ## Como foi feito
 
-O desenho veio primeiro. Montei a interface inteira no Figma antes de escrever qualquer linha: layout, paleta, hierarquia dos painéis, como cada estado deveria parecer.
+O desenho veio primeiro. Montei a interface inteira no Figma antes de escrever qualquer linha: layout, paleta, hierarquia dos painéis, como cada estado deveria parecer. (Tudo baseado no design já existente do Vscode)
 
 A exportação para HTML dá conta do que é estático. As caixas, as cores, o tipo, o espaçamento. O que ela não entrega é comportamento, o terminal que interpreta comandos, a busca fuzzy do command palette, o dobramento de código, o sticky scroll, a troca de tema, a busca em todos os arquivos. Nada disso sai de um export.
 
