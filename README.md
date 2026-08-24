@@ -44,7 +44,7 @@ O desenho veio primeiro. Montei a interface inteira no Figma antes de escrever q
 
 A exportação para HTML dá conta do que é estático. As caixas, as cores, o tipo, o espaçamento. O que ela não entrega é comportamento, o terminal que interpreta comandos, a busca fuzzy do command palette, o dobramento de código, o sticky scroll, a troca de tema, a busca em todos os arquivos. Nada disso sai de um export.
 
-Essa camada eu escrevi com apoio do Claude Code, revisando e refazendo o que não servia. O desenho continua sendo meu, utilizei dele para entender o funcionamento do código e como ferramenta de auxilio.
+Essa camada eu escrevi com apoio do Claude Code, revisando e refazendo o que não servia. O desenho continua sendo meu (ou da Microsoft kkj), utilizei dele para entender o funcionamento do código e como ferramenta de auxilio.
 
 ## Comandos
 
