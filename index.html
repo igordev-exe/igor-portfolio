@@ -3,11 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>igor-portfolio — Visual Studio Code</title>
+<title>Igor Alves — Portfólio | Engenharia de Software (UnB/FGA)</title>
 <meta name="description" content="Portfólio de Igor Alves — Engenharia de Software (UnB/FGA). Front-end, Python e prototipação." />
+<meta name="author" content="Igor Alves" />
+<meta name="theme-color" content="#0d1117" />
+<meta property="og:type" content="profile" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Igor Alves — Portfólio" />
+<meta property="og:description" content="Engenharia de Software (UnB/FGA). Front-end, Python e prototipação. Buscando estágio." />
+<meta property="og:image" content="https://igordev-exe.github.io/og-cover.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230d1117'/%3E%3Ctext x='8' y='11.5' text-anchor='middle' font-family='monospace' font-size='9' font-weight='700' fill='%233fb950'%3E&gt;_%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 /* Temas */
 :root, [data-theme="dark"]{
@@ -16,8 +25,8 @@
   --text:#c9d1d9; --text-dim:#8b949e; --text-bright:#f0f6fc;
   --green:#3fb950; --cyan:#79c0ff; --yellow:#e3b341; --pink:#ff7b72;
   --purple:#d2a8ff; --orange:#ffa657; --blue:#58a6ff; --comment:#8b949e;
-  --selection:#1f3242; --accent:#238636; --accent-fg:#f0f6fc;
-  --line-hl:rgba(255,255,255,.045); --line-hl-b:#282e36; --guide:#2a3038; --guide-on:#4a5560;
+  --selection:#1f3242; --accent:#1f7a31; --accent-fg:#f0f6fc;
+  --line-hl:rgba(255,255,255,.045); --line-hl-b:#282e36; --guide:#2a3038; --gutter-n:#7d8590;
   --br1:#ffd700; --br2:#da70d6; --br3:#179fff;
   --widget:#161b22; --widget-b:#30363d; --shadow:rgba(1,4,9,.7);
   --find:rgba(255,199,0,.28);
@@ -29,7 +38,7 @@
   --green:#098658; --cyan:#0070c1; --yellow:#a31515; --pink:#af00db;
   --purple:#795e26; --orange:#001080; --blue:#0000ff; --comment:#008000;
   --selection:#e4e6f1; --accent:#005fb8; --accent-fg:#ffffff;
-  --line-hl:rgba(0,0,0,.035); --line-hl-b:#e4e4e4; --guide:#d3d3d3; --guide-on:#939393;
+  --line-hl:rgba(0,0,0,.035); --line-hl-b:#e4e4e4; --guide:#d3d3d3; --gutter-n:#767676;
   --br1:#0431fa; --br2:#319331; --br3:#7b3814;
   --widget:#ffffff; --widget-b:#c8c8c8; --shadow:rgba(0,0,0,.16);
   --find:rgba(255,199,0,.55);
@@ -37,11 +46,11 @@
 [data-theme="monokai"]{
   --bg:#272822; --sidebar:#1e1f1c; --panel:#272822; --gutter-bg:#272822;
   --border:#3e3d32; --border-dim:#34352c; --hover:rgba(255,255,255,.06);
-  --text:#f8f8f2; --text-dim:#75715e; --text-bright:#ffffff;
+  --text:#f8f8f2; --text-dim:#98927d; --text-bright:#ffffff;
   --green:#a6e22e; --cyan:#66d9ef; --yellow:#e6db74; --pink:#f92672;
   --purple:#ae81ff; --orange:#fd971f; --blue:#66d9ef; --comment:#75715e;
   --selection:#49483e; --accent:#75715e; --accent-fg:#f8f8f2;
-  --line-hl:rgba(255,255,255,.04); --line-hl-b:#3e3d32; --guide:#3b3a32; --guide-on:#5f5e51;
+  --line-hl:rgba(255,255,255,.04); --line-hl-b:#3e3d32; --guide:#3b3a32; --gutter-n:#98927d;
   --br1:#e6db74; --br2:#f92672; --br3:#66d9ef;
   --widget:#1e1f1c; --widget-b:#3e3d32; --shadow:rgba(0,0,0,.6);
   --find:rgba(255,224,84,.32);
@@ -63,6 +72,24 @@ button,input{font-family:inherit;color:inherit}
 svg{display:block;flex-shrink:0}
 [hidden]{display:none!important}
 .only-sm{display:none}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+/* Só aparece quando o JavaScript está desligado ou falhou. */
+.nojs{
+  position:fixed;inset:0;z-index:200;overflow:auto;background:var(--bg);
+  padding:40px 22px;font-size:14px;line-height:1.7;
+}
+.nojs .wrap{max-width:620px;margin:0 auto}
+.nojs h1{font-size:22px;color:var(--text-bright);margin-bottom:4px}
+.nojs h2{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dim);margin:26px 0 8px}
+.nojs p{margin-bottom:8px}
+.nojs ul{list-style:none}
+.nojs li{padding:4px 0;border-bottom:1px solid var(--border-dim)}
+.nojs a{color:var(--blue)}
+.nojs .tip{color:var(--text-dim);font-size:12px;margin-top:26px}
 
 .app{display:flex;flex-direction:column;height:100dvh;overflow:hidden}
 
@@ -148,7 +175,7 @@ svg{display:block;flex-shrink:0}
 .tree-row{
   display:flex;align-items:center;gap:6px;padding:0 8px 0 0;height:22px;cursor:pointer;
   user-select:none;border-left:2px solid transparent;font-size:12.5px;color:var(--text);
-  white-space:nowrap;background:none;border-right:0;border-top:0;border-bottom:0;width:100%;text-align:left;
+  white-space:nowrap;
 }
 .tree-row:hover{background:var(--hover)}
 .tree-row.active{background:var(--selection);border-left-color:var(--accent);color:var(--text-bright)}
@@ -211,6 +238,7 @@ svg{display:block;flex-shrink:0}
 .tab-close{
   opacity:0;width:18px;height:18px;border-radius:4px;display:flex;align-items:center;
   justify-content:center;color:var(--text-dim);margin-left:2px;
+  background:none;border:0;padding:0;cursor:pointer;
 }
 .tab-close:hover{background:var(--hover);color:var(--text-bright)}
 .tab:hover .tab-close,.tab.active .tab-close{opacity:1}
@@ -235,8 +263,8 @@ svg{display:block;flex-shrink:0}
   height:21px;display:flex;align-items:center;justify-content:flex-end;
   gap:3px;padding-right:6px;font-size:12.5px;
 }
-.g-row .n{color:var(--text-dim);opacity:.62;font-variant-numeric:tabular-nums}
-.g-row.cur .n{color:var(--text-bright);opacity:1}
+.g-row .n{color:var(--gutter-n);font-variant-numeric:tabular-nums}
+.g-row.cur .n{color:var(--text-bright)}
 .g-row .fold{
   width:14px;height:14px;display:flex;align-items:center;justify-content:center;
   color:var(--text-dim);cursor:pointer;opacity:0;transition:opacity .1s;
@@ -279,14 +307,12 @@ svg{display:block;flex-shrink:0}
 .t-type{color:var(--cyan)} .t-prop{color:var(--cyan)} .t-op{color:var(--pink)}
 .t-punc{color:var(--text)} .t-var{color:var(--orange)} .t-plain{color:var(--text)} .t-tag{color:var(--green)}
 .b0{color:var(--br1)} .b1{color:var(--br2)} .b2{color:var(--br3)}
-.hit{background:var(--find);border-radius:1px}
 
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 .cursor{
   display:inline-block;width:2px;height:16px;background:var(--text-bright);
   vertical-align:text-bottom;animation:blink 1s step-end infinite;
 }
-.cursor.fat{width:7px;background:var(--cyan);height:14px}
 
 /* Minimap */
 .minimap{
@@ -395,8 +421,8 @@ svg{display:block;flex-shrink:0}
   box-shadow:0 8px 30px var(--shadow);overflow:hidden;
 }
 .qi-input{
-  width:100%;background:var(--bg);border:1px solid var(--blue);color:var(--text);
-  font-family:var(--mono);font-size:13px;padding:6px 9px;outline:none;margin:8px;width:calc(100% - 16px);
+  width:calc(100% - 16px);background:var(--bg);border:1px solid var(--blue);color:var(--text);
+  font-family:var(--mono);font-size:13px;padding:6px 9px;outline:none;margin:8px;
 }
 .qi-list{max-height:min(420px,60vh);overflow-y:auto;padding-bottom:4px}
 .qi-item{display:flex;align-items:center;gap:9px;padding:5px 12px;cursor:pointer;font-size:12.5px}
@@ -499,6 +525,46 @@ svg{display:block;flex-shrink:0}
 </head>
 <body>
 
+<h1 class="sr-only">Igor Alves — portfólio de Engenharia de Software</h1>
+
+<noscript>
+  <div class="nojs"><div class="wrap">
+    <h1>Igor Alves</h1>
+    <p>Estudante de Engenharia de Software (UnB/FGA) · Brasília, DF</p>
+    <p>Buscando estágio em desenvolvimento front-end ou fullstack.</p>
+
+    <h2>Sobre</h2>
+    <p>Desenvolvo do protótipo em Figma à interface em front-end. Python e HTML/CSS no dia a dia,
+       Java/POO em projetos com regras de negócio reais. Experiência em levantamento de requisitos,
+       UX e análise de dados.</p>
+
+    <h2>Experiência</h2>
+    <ul>
+      <li>Pesquisador (PIBIC) — UnB, PPGDH/CEAM · jul 2026 – atual</li>
+      <li>Monitor — UnB/FGA · 2026.2 – atual</li>
+      <li>Trainee — Orc'estra Gamificação (Empresa Júnior) · abr 2026 – jul 2026</li>
+      <li>Assistente Administrativo — Real Expresso / SEST SENAT · fev 2025 – ago 2025</li>
+    </ul>
+
+    <h2>Projetos</h2>
+    <ul>
+      <li>Byte &amp; Brew — Java, POO</li>
+      <li>QuizMago — HTML, CSS, JavaScript</li>
+      <li>Prisma — CSS, TypeScript</li>
+      <li>SiteHC-FGA — TypeScript</li>
+    </ul>
+
+    <h2>Contato</h2>
+    <ul>
+      <li><a href="mailto:igoralvesrodrigues12@gmail.com">igoralvesrodrigues12@gmail.com</a></li>
+      <li><a href="https://github.com/igordev-exe">github.com/igordev-exe</a></li>
+      <li><a href="https://www.linkedin.com/in/igordev-exe">linkedin.com/in/igordev-exe</a></li>
+    </ul>
+
+    <p class="tip">Esta é a versão sem JavaScript. Com o JS ativado a página vira um editor navegável.</p>
+  </div></div>
+</noscript>
+
 <div class="app">
 
   <!-- Title bar -->
@@ -590,6 +656,8 @@ var kw=T("keyword"), fn_=T("fn"), str=T("string"), num=T("number"), cmt=T("comme
     typ=T("type"), prp=T("prop"), op=T("op"), pnc=T("punc"), vr=T("var"), pl=T("plain"), tag=T("tag");
 function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function $(id){ return document.getElementById(id); }
+/* Busca sem acento: "estagio" precisa achar "estágio". */
+function norm(v){ return String(v).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""); }
 
 /* Ícones (SVG inline) */
 var ICO = {
@@ -625,6 +693,9 @@ function fileIcon(id, size){
          '<text x="8" y="11.4" text-anchor="middle" font-family="ui-monospace,monospace" font-size="7.4" font-weight="700" fill="'+fg+'">'+(isTS?"TS":"JS")+'</text></svg>';
 }
 
+/* Telefone montado em partes: bot de scraping não leva o número pronto do HTML. */
+var PHONE = ["(61) ", "98578", "-", "8358"].join("");
+
 /* Conteúdo dos arquivos */
 var FILES = {
   "readme.md": { lang:"Markdown", lines:[
@@ -635,28 +706,32 @@ var FILES = {
     [pl("")],
     [tag("## Navegação rápida")],
     [pl("")],
-    [prp("| Arquivo          "), pnc("| "), prp("Conteúdo                    "), pnc("|")],
-    [pl("|------------------|-----------------------------|")],
-    [pl("| about.md         | "), str("Quem sou, experiências, idiomas"), pl(" |")],
-    [pl("| projects.json    | "), str("Projetos com stack e descrição "), pl(" |")],
-    [pl("| skills.ts        | "), str("Competências técnicas          "), pl(" |")],
-    [pl("| contact.js       | "), str("Contatos e redes               "), pl(" |")],
+    [prp("| Arquivo       "), pnc("| "), prp("Conteúdo                       "), pnc(" |")],
+    [pl("|---------------|---------------------------------|")],
+    [pl("| about.md      | "), str("Quem sou, experiências, idiomas"), pl(" |")],
+    [pl("| projects.json | "), str("Projetos com stack e descrição "), pl(" |")],
+    [pl("| skills.ts     | "), str("Competências técnicas          "), pl(" |")],
+    [pl("| contact.js    | "), str("Contatos e redes               "), pl(" |")],
     [pl("")],
     [tag("## Terminal")],
     [pl("")],
     [cmt("  Use o painel inferior para navegar por comandos:")],
     [pl("")],
-    [str("  $ help"), cmt("        — lista todos os comandos")],
-    [str("  $ ls"), cmt("          — lista os arquivos")],
-    [str("  $ cat about.md"), cmt("  — abre about.md")],
-    [str("  $ open projects"), cmt(" — abre projects.json")],
-    [str("  $ whoami"), cmt("       — informações sobre mim")],
-    [str("  $ status"), cmt("       — disponibilidade")],
+    [str("  $ help"), cmt("           — lista todos os comandos")],
+    [str("  $ ls"), cmt("             — lista os arquivos")],
+    [str("  $ cat about.md"), cmt("   — abre about.md")],
+    [str("  $ open projects"), cmt("  — abre projects.json")],
+    [str("  $ grep <termo>"), cmt("   — busca em todos os arquivos")],
+    [str("  $ theme monokai"), cmt("  — troca o tema")],
+    [str("  $ whoami"), cmt("         — informações sobre mim")],
+    [str("  $ status"), cmt("         — disponibilidade")],
+    [str("  $ clear"), cmt("          — limpa o terminal")],
     [pl("")],
     [tag("## Atalhos")],
     [pl("")],
     [cmt("  Ctrl+P        — abrir arquivo")],
     [cmt("  Ctrl+Shift+P  — command palette")],
+    [cmt("  Ctrl+G        — ir para linha")],
     [cmt("  Ctrl+B        — barra lateral")],
     [cmt("  Ctrl+`        — terminal")]
   ]},
@@ -694,25 +769,28 @@ var FILES = {
     [prp('  "github"'), pnc(": "), str('"github.com/igordev-exe"'), pnc(",")],
     [prp('  "projects"'), pnc(": [")],
     [pnc("    {")],
-    [prp('      "name"'), pnc(": "), str('"Byte & Brew"'), pnc(",")],
+    [prp('      "name"'), pnc(":  "), str('"Byte & Brew"'), pnc(",")],
     [prp('      "stack"'), pnc(": "), str('"Java, POO"'), pnc(",")],
-    [prp('      "desc"'), pnc(": "), str('"Sistema de vendas e fidelidade. Controle de estoque,')],
-    [str('               regras de negócio e sistema de pontos para clientes VIP."'), pnc(",")],
-    [prp('      "tags"'), pnc(": ["), str('"Java"'), pnc(", "), str('"POO"'), pnc(", "), str('"Business Rules"'), pnc("]")],
+    [prp('      "desc"'), pnc(":  "), str('"Sistema de vendas e fidelidade com controle de estoque e pontos VIP."'), pnc(",")],
+    [prp('      "tags"'), pnc(":  ["), str('"Java"'), pnc(", "), str('"POO"'), pnc(", "), str('"Business Rules"'), pnc("]")],
     [pnc("    },")],
     [pnc("    {")],
-    [prp('      "name"'), pnc(": "), str('"QuizMago"'), pnc(",")],
+    [prp('      "name"'), pnc(":  "), str('"QuizMago"'), pnc(",")],
     [prp('      "stack"'), pnc(": "), str('"HTML, CSS, JavaScript"'), pnc(",")],
-    [prp('      "desc"'), pnc(": "), str('"App web de quiz interativo. Foco em lógica')],
-    [str('               front-end e interação do usuário."'), pnc(",")],
-    [prp('      "tags"'), pnc(": ["), str('"JavaScript"'), pnc(", "), str('"HTML"'), pnc(", "), str('"CSS"'), pnc("]")],
+    [prp('      "desc"'), pnc(":  "), str('"App web de quiz interativo com foco em UX e lógica front-end."'), pnc(",")],
+    [prp('      "tags"'), pnc(":  ["), str('"JavaScript"'), pnc(", "), str('"HTML"'), pnc(", "), str('"CSS"'), pnc("]")],
     [pnc("    },")],
     [pnc("    {")],
-    [prp('      "name"'), pnc(": "), str('"Prisma / SiteHC-FGA"'), pnc(",")],
+    [prp('      "name"'), pnc(":  "), str('"Prisma"'), pnc(",")],
     [prp('      "stack"'), pnc(": "), str('"CSS, TypeScript"'), pnc(",")],
-    [prp('      "desc"'), pnc(": "), str('"Projetos front-end focados em interface e')],
-    [str('               experiência, incluindo site em TypeScript a pedido acadêmico."'), pnc(",")],
-    [prp('      "tags"'), pnc(": ["), str('"TypeScript"'), pnc(", "), str('"CSS"'), pnc(", "), str('"UI/UX"'), pnc("]")],
+    [prp('      "desc"'), pnc(":  "), str('"Projeto front-end focado em interface e experiência do usuário."'), pnc(",")],
+    [prp('      "tags"'), pnc(":  ["), str('"TypeScript"'), pnc(", "), str('"CSS"'), pnc(", "), str('"UI/UX"'), pnc("]")],
+    [pnc("    },")],
+    [pnc("    {")],
+    [prp('      "name"'), pnc(":  "), str('"SiteHC-FGA"'), pnc(",")],
+    [prp('      "stack"'), pnc(": "), str('"TypeScript"'), pnc(",")],
+    [prp('      "desc"'), pnc(":  "), str('"Site desenvolvido em TypeScript a pedido acadêmico."'), pnc(",")],
+    [prp('      "tags"'), pnc(":  ["), str('"TypeScript"'), pnc(", "), str('"Front-end"'), pnc("]")],
     [pnc("    }")],
     [pnc("  ]")],
     [pnc("}")]
@@ -757,20 +835,20 @@ var FILES = {
     [prp("  email"), pnc(":    "), str('"igoralvesrodrigues12@gmail.com"'), pnc(",")],
     [prp("  github"), pnc(":   "), str('"github.com/igordev-exe"'), pnc(",")],
     [prp("  linkedin"), pnc(": "), str('"linkedin.com/in/igordev-exe"'), pnc(",")],
-    [prp("  phone"), pnc(":    "), str('"(61) 98578-8358"'), pnc(",")],
+    [prp("  phone"), pnc(":    "), str('"' + PHONE + '"'), pnc(",")],
     [prp("  location"), pnc(": "), str('"Brasília, DF"'), pnc(",")],
     [prp("  status"), pnc(":   "), str('"open to internship opportunities"'), pnc(",")],
     [pnc("};")],
     [pl("")],
     [cmt("/**")],
-    [cmt(" * Enviar mensagem diretamente por email")],
+    [cmt(" * Abre o cliente de email já com assunto e mensagem preenchidos.")],
     [cmt(" * @param {string} subject — assunto")],
     [cmt(" * @param {string} body    — mensagem")],
     [cmt(" */")],
-    [kw("async function"), pl(" "), fn_("contact"), pnc("("), vr("subject"), pnc(", "), vr("body"), pnc(") {")],
-    [kw("  const"), pl(" "), vr("mailto"), pl(" = ")],
-    [pl("    "), str("`mailto:${igor.email}?subject=${subject}&body=${body}`"), pnc(";")],
-    [pl("  "), fn_("window"), pnc("."), fn_("open"), pnc("("), vr("mailto"), pnc(");")],
+    [kw("function"), pl(" "), fn_("contact"), pnc("("), vr("subject"), pnc(", "), vr("body"), pnc(") {")],
+    [kw("  const"), pl(" "), vr("query"), pl(" =")],
+    [pl("    "), str("`subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`"), pnc(";")],
+    [pl("  "), vr("window"), pnc("."), prp("location"), pnc("."), prp("href"), pl(" = "), str("`mailto:${igor.email}?${query}`"), pnc(";")],
     [pnc("}")],
     [pl("")],
     [kw("export default"), pl(" "), vr("igor"), pnc(";")]
@@ -782,10 +860,18 @@ var TREE_FILES = ["readme.md","about.md","projects.json","skills.ts","contact.js
 var LANG_SKILLS = [
   { name:"HTML/CSS",   lvl:75, color:"var(--pink)" },
   { name:"Python",     lvl:50, color:"var(--yellow)" },
-  { name:"Figma",      lvl:85, color:"var(--purple)" },
   { name:"JavaScript", lvl:60, color:"var(--orange)" },
   { name:"TypeScript", lvl:55, color:"var(--cyan)" },
-  { name:"Java",       lvl:60, color:"var(--blue)" }
+  { name:"Java",       lvl:60, color:"var(--blue)" },
+  { name:"C",          lvl:65, color:"var(--green)" },
+  { name:"SQL",        lvl:45, color:"var(--purple)" }
+];
+
+var TOOL_SKILLS = [
+  { name:"Figma",           lvl:85, color:"var(--purple)" },
+  { name:"VS Code",         lvl:90, color:"var(--blue)" },
+  { name:"AI-assisted dev", lvl:80, color:"var(--green)" },
+  { name:"Git",             lvl:78, color:"var(--orange)" }
 ];
 
 var CONCEPTS = ["POO","Modelagem de Domínio","Regras de Negócio","UX/UI","Prototipação",
@@ -796,15 +882,16 @@ var EXPERIENCE = [
     points:["Selecionado por processo acadêmico para atuar em programa de pós-graduação.",
             "Organizo e analiso bases de dados públicos, estruturando informação complexa.",
             "Produzo documentação técnica de apoio às pesquisas do grupo."] },
+  { role:"Monitor", org:"UnB — FGA", period:"2026.2 – atual", color:"var(--purple)",
+    points:["Monitoria de disciplina da graduação, com atendimento a alunos e apoio ao professor.",
+            "Resolução de dúvidas e acompanhamento de exercícios ao longo do semestre."] },
   { role:"Trainee — Empresa Júnior", org:"Orc'estra Gamificação", period:"abr 2026 – jul 2026", color:"var(--cyan)",
     points:["Levantamento de requisitos diretamente com clientes, do contato à definição de escopo.",
             "Prototipação de interfaces no Figma, do conceito à entrega.",
             "Atuação em equipe com metodologia ágil, integrando design e desenvolvimento."] },
   { role:"Assistente Administrativo", org:"Real Expresso / SEST SENAT", period:"fev 2025 – ago 2025", color:"var(--yellow)",
     points:["Jovem Aprendiz. Organização de documentos, controle de planilhas e atendimento.",
-            "Desenvolvi organização, comunicação e responsabilidade profissional."] },
-  { role:"Monitor de Matemática", org:"Único Educacional", period:"jan 2023 – nov 2024", color:"var(--purple)",
-    points:["Monitoria presencial e online, apoiando alunos na compreensão do conteúdo."] }
+            "Desenvolvi organização, comunicação e responsabilidade profissional."] }
 ];
 
 var PROJECTS = [
@@ -821,16 +908,28 @@ var PROJECTS = [
 var CONTACTS = [
   { label:"Email",    value:"igoralvesrodrigues12@gmail.com", href:"mailto:igoralvesrodrigues12@gmail.com", color:"var(--cyan)" },
   { label:"GitHub",   value:"github.com/igordev-exe",         href:"https://github.com/igordev-exe",        color:"var(--green)" },
-  { label:"LinkedIn", value:"linkedin.com/in/igordev-exe",    href:"https://linkedin.com/in/igordev-exe",   color:"var(--blue)" },
-  { label:"Phone",    value:"(61) 98578-8358",                href:"tel:+5561985788358",                    color:"var(--text-dim)" },
+  { label:"LinkedIn", value:"linkedin.com/in/igordev-exe",    href:"https://www.linkedin.com/in/igordev-exe", color:"var(--blue)" },
+  { label:"Phone",    value:PHONE,                            href:"tel:+55" + PHONE.replace(/\D/g,""),     color:"var(--text-dim)" },
   { label:"Location", value:"Brasília, DF",                   href:null,                                    color:"var(--text-dim)" }
 ];
 
+/* Datas reais: o "há quanto tempo" é calculado, não escrito na mão. */
+function ago(iso){
+  var days = Math.floor((Date.now() - new Date(iso + "T12:00:00").getTime()) / 86400000);
+  if (days <= 0) return "hoje";
+  if (days === 1) return "ontem";
+  if (days < 7)   return days + " dias atrás";
+  if (days < 30){ var w = Math.floor(days/7);  return w + (w > 1 ? " semanas" : " semana") + " atrás"; }
+  if (days < 365){ var m = Math.floor(days/30); return m + (m > 1 ? " meses" : " mês") + " atrás"; }
+  var y = Math.floor(days/365);
+  return y + (y > 1 ? " anos" : " ano") + " atrás";
+}
+
 var COMMITS = [
-  { msg:"feat: add contact.js",    when:"2 horas atrás" },
-  { msg:"fix: update about.md",    when:"ontem" },
-  { msg:"feat: skills.ts + panel", when:"3 dias atrás" },
-  { msg:"init: project setup",     when:"2 semanas atrás" }
+  { msg:"feat: minimap + sticky scroll", date:"2026-08-22" },
+  { msg:"fix: update about.md",          date:"2026-08-18" },
+  { msg:"feat: skills.ts + panel",       date:"2026-08-10" },
+  { msg:"init: project setup",           date:"2026-07-28" }
 ];
 
 var CHANGES = [
@@ -840,7 +939,7 @@ var CHANGES = [
 ];
 
 var EXTENSIONS = [
-  { name:"Figma", ver:"v5.2.0", bg:"#a259ff", ini:"Fi", pub:"Prototipação",
+  { name:"Figma", ver:"", bg:"#a259ff", ini:"Fi", pub:"Prototipação",
     desc:"Do wireframe ao design system. Handoff de componentes direto para o front-end." },
   { name:"Git", ver:"v2.45.0", bg:"#f05033", ini:"Gi", pub:"Versionamento",
     desc:"Branches, pull requests e resolução de conflitos em trabalho de equipe." },
@@ -851,6 +950,25 @@ var EXTENSIONS = [
   { name:"Metodologias Ágeis", ver:"v2.0.0", bg:"#e3b341", ini:"Ag", pub:"Time",
     desc:"Scrum e Kanban aplicados em empresa júnior e projetos acadêmicos." }
 ];
+
+/* Índice do que só existe na "rendered view": experiências, projetos e contatos
+   não estão no texto dos arquivos, mas precisam aparecer na busca. */
+var RICH_INDEX = {};
+(function(){
+  function add(fid, text){ (RICH_INDEX[fid] = RICH_INDEX[fid] || []).push(text); }
+  EXPERIENCE.forEach(function(e){
+    add("about.md", e.role + " · " + e.org + " · " + e.period);
+    e.points.forEach(function(p){ add("about.md", p); });
+  });
+  LANG_SKILLS.concat(TOOL_SKILLS).forEach(function(s){ add("about.md", s.name + " — " + s.lvl + "%"); });
+  PROJECTS.forEach(function(p){
+    add("projects.json", p.name + " · " + p.stack + " · " + p.tags.join(", "));
+    add("projects.json", p.desc);
+  });
+  CONCEPTS.forEach(function(c){ add("skills.ts", "Conceito: " + c); });
+  TOOL_SKILLS.forEach(function(s){ add("skills.ts", s.name + " — " + s.lvl + "%"); });
+  CONTACTS.forEach(function(c){ add("contact.js", c.label + ": " + c.value); });
+})();
 
 /* Análise: indentação, brackets, folding */
 var ANALYSIS = {};
@@ -1020,6 +1138,9 @@ function measureChar(){
   if (w > 1) charW = w;
   d.parentNode.removeChild(d);
 }
+/* A JetBrains Mono chega depois do primeiro render: sem re-medir, a coluna
+   calculada no clique fica com a métrica da fonte de fallback. */
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureChar);
 
 function renderEditor(){
   var fid = state.active, a = analyze(fid), vis = visibleLines(fid);
@@ -1036,14 +1157,14 @@ function renderEditor(){
 
     g += '<div class="g-row'+(isCur?" cur":"")+'" data-line="'+i+'">'+
          '<span class="n">'+(i+1)+'</span>'+
-         '<span class="fold'+(isFold?" can":"")+(isOn?" on":"")+'" data-fold="'+i+'">'+
+         '<span class="fold'+(isFold?" can":"")+(isOn?" on":"")+'" data-fold="'+i+'"'+(isFold?' role="button" tabindex="0" aria-label="Dobrar bloco"':'')+'>'+
          (isFold ? (isOn ? ICO.chevR : ICO.chevD) : "")+'</span></div>';
 
     var ind = a.indent[i];
     c += '<div class="code-line'+(isCur?" cur":"")+'" data-line="'+i+'" data-n="'+(i+1)+'"'+
          (ind>0 ? ' style="--ind:'+ind+'ch"' : '')+'>'+
          '<span class="txt">'+a.html[i]+'</span>'+
-         (isOn ? '<span class="fold-badge" data-fold="'+i+'">⋯</span>' : '')+
+         (isOn ? '<span class="fold-badge" data-fold="'+i+'" role="button" tabindex="0" aria-label="Expandir bloco">⋯</span>' : '')+
          (isCur ? '<span class="cursor" style="margin-left:1px"></span>' : '')+
          '</div>';
   }
@@ -1064,7 +1185,7 @@ function renderEditor(){
   el.rich.innerHTML = renderRich(fid);
   armSkillBars();
 
-  document.title = fid + " — igor-portfolio";
+  document.title = fid + " — Igor Alves";
   el.scroll.scrollTop = 0;
   el.gutter.scrollTop = 0;
   requestAnimationFrame(function(){ onScroll(); });
@@ -1108,6 +1229,11 @@ function foldAll(v){
 
 function revealLine(fid, line){
   if (state.active !== fid) openFile(fid, true);
+  if (line < 0){ /* resultado da rendered view: rola até o painel */
+    el.scroll.scrollTop = Math.max(0, el.rich.offsetTop - 12);
+    onScroll();
+    return;
+  }
   var arr = foldedOf(fid), a = analyze(fid), changed = false;
   a.folds.forEach(function(f){
     if (f.start < line && f.end >= line){
@@ -1157,7 +1283,7 @@ function onScroll(){
 
   if (top > 6 && stack.length){
     el.stickyInner.innerHTML = stack.map(function(f){
-      return '<div class="sticky-row" data-goto="'+f.start+'">'+a.html[f.start]+'</div>';
+      return '<div class="sticky-row" data-goto="'+f.start+'" role="button" tabindex="0">'+a.html[f.start]+'</div>';
     }).join("");
     el.sticky.hidden = false;
   } else {
@@ -1212,7 +1338,8 @@ function renderRich(file){
   var L = '<div class="rich-label">// rendered view</div>';
   if (file === "about.md"){
     return '<div class="rich">'+L+
-      '<div style="margin-bottom:32px"><h4>SKILLS</h4><div class="grid-skills">'+LANG_SKILLS.map(skillBar).join("")+'</div></div>'+
+      '<div style="margin-bottom:32px"><h4>LINGUAGENS</h4><div class="grid-skills">'+LANG_SKILLS.map(skillBar).join("")+'</div></div>'+
+      '<div style="margin-bottom:32px"><h4>FERRAMENTAS</h4><div class="grid-skills">'+TOOL_SKILLS.map(skillBar).join("")+'</div></div>'+
       '<div><h4>EXPERIÊNCIA</h4><div style="display:flex;flex-direction:column;gap:2px">'+
       EXPERIENCE.map(function(e,i){
         return '<details class="exp" style="border-left-color:'+e.color+'"'+(i===0?" open":"")+'>'+
@@ -1235,7 +1362,9 @@ function renderRich(file){
       }).join("")+'</div></div>';
   }
   if (file === "skills.ts"){
-    return '<div class="rich">'+L+'<div class="grid-skills wide">'+LANG_SKILLS.map(skillBar).join("")+'</div>'+
+    return '<div class="rich">'+L+
+      '<h4>LINGUAGENS</h4><div class="grid-skills wide">'+LANG_SKILLS.map(skillBar).join("")+'</div>'+
+      '<h4 style="margin-top:24px">FERRAMENTAS</h4><div class="grid-skills wide">'+TOOL_SKILLS.map(skillBar).join("")+'</div>'+
       '<div style="margin-top:24px"><h4 style="margin-bottom:12px">CONCEITOS</h4><div class="tags">'+
       CONCEPTS.map(function(c){
         return '<span class="badge" style="color:var(--text-dim);border-color:var(--border)">'+esc(c)+'</span>';
@@ -1274,9 +1403,9 @@ function armSkillBars(){
 
 function renderTabs(){
   el.tabs.innerHTML = state.tabs.map(function(t){
-    return '<button class="tab'+(t.id===state.active?" active":"")+(t.preview?" preview":"")+'" data-tab="'+t.id+'" role="tab" aria-selected="'+(t.id===state.active)+'">'+
+    return '<div class="tab'+(t.id===state.active?" active":"")+(t.preview?" preview":"")+'" data-tab="'+t.id+'" role="tab" tabindex="0" aria-selected="'+(t.id===state.active)+'">'+
            fileIcon(t.id,15)+'<span class="name">'+t.id+'</span>'+
-           '<span class="tab-close" data-close="'+t.id+'" title="Fechar">'+ICO.close+'</span></button>';
+           '<button class="tab-close" data-close="'+t.id+'" title="Fechar '+t.id+'" aria-label="Fechar '+t.id+'">'+ICO.close+'</button></div>';
   }).join("");
 }
 
@@ -1295,7 +1424,7 @@ function openFile(id, preview){
   }
   state.active = id;
   if (isNarrow()) state.sideOpen = false;
-  renderTabs(); renderEditor(); renderSidebar(); renderChrome();
+  renderTabs(); renderEditor(); renderSidebar(); renderActivity(); renderChrome();
 }
 function pinTab(id){
   state.tabs.forEach(function(t){ if (t.id === id) t.preview = false; });
@@ -1351,19 +1480,19 @@ function renderSidebar(){
 
 function viewExplorer(){
   var a = analyze(state.active);
-  var h = '<div class="section-title'+(state.treeOpen?"":" closed")+'" data-toggle="tree">'+ICO.chevD+'IGORDEV-EXE</div>';
+  var h = '<div class="section-title'+(state.treeOpen?"":" closed")+'" data-toggle="tree" role="button" tabindex="0" aria-expanded="'+state.treeOpen+'">'+ICO.chevD+'IGORDEV-EXE</div>';
   if (state.treeOpen){
     h += TREE_FILES.map(function(f){
-      return '<div class="tree-row'+(state.active===f?" active":"")+'" data-file="'+f+'" style="padding-left:22px">'+
+      return '<div class="tree-row'+(state.active===f?" active":"")+'" data-file="'+f+'" role="button" tabindex="0" style="padding-left:22px">'+
              fileIcon(f,16)+'<span class="lbl">'+f+'</span></div>';
     }).join("");
   }
 
-  h += '<div class="section-title'+(state.outlineOpen?"":" closed")+'" data-toggle="outline" style="margin-top:10px">'+ICO.chevD+'OUTLINE</div>';
+  h += '<div class="section-title'+(state.outlineOpen?"":" closed")+'" data-toggle="outline" role="button" tabindex="0" aria-expanded="'+state.outlineOpen+'" style="margin-top:10px">'+ICO.chevD+'OUTLINE</div>';
   if (state.outlineOpen){
     var SYMC = { h:"var(--purple)", fn:"var(--purple)", var:"var(--cyan)", obj:"var(--orange)", prop:"var(--cyan)" };
     h += a.syms.length ? a.syms.map(function(sy){
-      return '<div class="tree-row" data-goto="'+sy.line+'" style="padding-left:22px">'+
+      return '<div class="tree-row" data-goto="'+sy.line+'" role="button" tabindex="0" style="padding-left:22px">'+
              '<span style="color:'+SYMC[sy.kind]+';display:flex">'+ICO.sym+'</span>'+
              '<span class="lbl">'+esc(sy.label)+'</span><span class="sub">'+(sy.line+1)+'</span></div>';
     }).join("") : '<div class="empty-note">Nenhum símbolo neste arquivo.</div>';
@@ -1382,27 +1511,34 @@ function viewSearch(){
   res.forEach(function(r){ total += r.hits.length; });
   h += '<div class="search-meta">'+(total ? total+' resultado'+(total>1?'s':'')+' em '+res.length+' arquivo'+(res.length>1?'s':'') : 'Nenhum resultado')+'</div>';
   h += res.map(function(r){
-    return '<div class="res-file" data-file="'+r.fid+'">'+ICO.chevD+fileIcon(r.fid,15)+
+    return '<div class="res-file" data-file="'+r.fid+'" role="button" tabindex="0">'+ICO.chevD+fileIcon(r.fid,15)+
            '<span class="lbl">'+r.fid+'</span><span class="cnt">'+r.hits.length+'</span></div>'+
            r.hits.map(function(hit){
-             return '<div class="res-line" data-open="'+r.fid+'" data-line="'+hit.line+'">'+hit.html+'</div>';
+             return '<div class="res-line" data-open="'+r.fid+'" data-line="'+hit.line+'" role="button" tabindex="0">'+hit.html+'</div>';
            }).join("");
   }).join("");
   return h;
 }
 
+function snippet(text, idx, len){
+  var start = Math.max(0, idx-14);
+  var frag = text.slice(start, start+64);
+  var rel = idx - start;
+  return (start?"…":"")+esc(frag.slice(0,rel))+'<mark>'+esc(frag.substr(rel,len))+'</mark>'+esc(frag.slice(rel+len));
+}
 function searchAll(q){
-  var out = [], ql = q.toLowerCase();
+  var out = [], ql = norm(q);
+  if (!ql) return out;
   TREE_FILES.forEach(function(fid){
     var a = analyze(fid), hits = [];
     a.texts.forEach(function(t,i){
-      var idx = t.toLowerCase().indexOf(ql);
-      if (idx < 0) return;
-      var start = Math.max(0, idx-14);
-      var frag = t.slice(start, start+64);
-      var rel = idx - start;
-      hits.push({ line:i,
-        html:(start?"…":"")+esc(frag.slice(0,rel))+'<mark>'+esc(frag.substr(rel,q.length))+'</mark>'+esc(frag.slice(rel+q.length)) });
+      var idx = norm(t).indexOf(ql);
+      if (idx >= 0) hits.push({ line:i, html:snippet(t, idx, q.length) });
+    });
+    /* o que só existe na rendered view (experiências, projetos, contatos) */
+    (RICH_INDEX[fid] || []).forEach(function(t){
+      var idx = norm(t).indexOf(ql);
+      if (idx >= 0) hits.push({ line:-1, html:snippet(t, idx, q.length) });
     });
     if (hits.length) out.push({ fid:fid, hits:hits.slice(0,20) });
   });
@@ -1412,14 +1548,14 @@ function searchAll(q){
 function viewSCM(){
   return '<div class="section-title" style="cursor:default">'+ICO.chevD+'CHANGES <span class="sub" style="margin-left:auto;color:var(--text-dim)">'+CHANGES.length+'</span></div>'+
     CHANGES.map(function(c){
-      return '<div class="tree-row" data-file="'+c.file+'" style="padding-left:22px">'+fileIcon(c.file,16)+
+      return '<div class="tree-row" data-file="'+c.file+'" role="button" tabindex="0" style="padding-left:22px">'+fileIcon(c.file,16)+
              '<span class="lbl">'+c.file+'</span><span class="gitbadge" style="color:'+c.color+'">'+c.badge+'</span></div>';
     }).join("") +
     '<div class="section-title" style="cursor:default;margin-top:12px">'+ICO.chevD+'COMMITS</div>'+
     COMMITS.map(function(c){
       return '<div class="tree-row static" style="padding-left:22px">'+
              '<span style="color:var(--green);display:flex">'+ICO.circle+'</span>'+
-             '<span class="lbl">'+esc(c.msg)+'</span><span class="sub">'+esc(c.when)+'</span></div>';
+             '<span class="lbl">'+esc(c.msg)+'</span><span class="sub">'+esc(ago(c.date))+'</span></div>';
     }).join("");
 }
 
@@ -1427,7 +1563,7 @@ function viewExtensions(){
   return '<div class="section-title" style="cursor:default">'+ICO.chevD+'INSTALLED — '+EXTENSIONS.length+'</div>'+
     EXTENSIONS.map(function(e){
       return '<div class="ext-card"><div class="ext-ico" style="background:'+e.bg+'">'+e.ini+'</div><div>'+
-             '<div class="ext-name">'+esc(e.name)+'<span style="font-size:10px;color:var(--text-dim)">'+e.ver+'</span></div>'+
+             '<div class="ext-name">'+esc(e.name)+(e.ver?'<span style="font-size:10px;color:var(--text-dim)">'+e.ver+'</span>':'')+'</div>'+
              '<div class="ext-desc">'+esc(e.desc)+'</div>'+
              '<div class="ext-pub"><span style="color:var(--green);display:flex">'+ICO.circle+'</span>'+esc(e.pub)+'</div>'+
              '</div></div>';
@@ -1553,7 +1689,7 @@ function qiRender(){
   if (!qi.items.length){ list.innerHTML = '<div class="qi-empty">Nenhum resultado</div>'; return; }
   if (qi.sel >= qi.items.length) qi.sel = qi.items.length - 1;
   list.innerHTML = qi.items.map(function(it,i){
-    return '<div class="qi-item'+(i===qi.sel?" sel":"")+'" data-i="'+i+'">'+it.html+
+    return '<div class="qi-item'+(i===qi.sel?" sel":"")+'" data-i="'+i+'" role="button" tabindex="0">'+it.html+
            (it.key?'<span class="qi-key">'+it.key+'</span>':'')+'</div>';
   }).join("");
   var sel = list.querySelector(".sel");
@@ -1649,15 +1785,15 @@ function closeMenus(){
 
 function ddItem(it){
   if (it.sep) return '<div class="dd-sep"></div>';
-  if (it.file) return '<div class="dd-item" data-openfile="'+it.file+'"><span class="check"></span>'+it.file+'</div>';
+  if (it.file) return '<div class="dd-item" data-openfile="'+it.file+'" role="button" tabindex="0"><span class="check"></span>'+it.file+'</div>';
   var c = it.cmd ? CMDS.filter(function(x){ return x.id === it.cmd; })[0] : null;
   var key = it.key || (c ? c.key : "");
-  return '<div class="dd-item'+(it.disabled?" disabled":"")+'"'+(it.cmd?' data-runcmd="'+it.cmd+'"':'')+'>'+
+  return '<div class="dd-item'+(it.disabled?" disabled":"")+'"'+(it.cmd?' data-runcmd="'+it.cmd+'" role="button" tabindex="0"':'')+'>'+
          '<span class="check"></span>'+esc(it.label)+(key?'<span class="key">'+key+'</span>':'')+'</div>';
 }
 function themeItems(){
   return THEMES.map(function(t){
-    return '<div class="dd-item" data-runcmd="theme.'+t.id+'"><span class="check">'+
+    return '<div class="dd-item" data-runcmd="theme.'+t.id+'" role="button" tabindex="0"><span class="check">'+
            (state.theme===t.id?"✓":"")+'</span>'+t.label+'</div>';
   }).join("");
 }
@@ -1740,8 +1876,7 @@ var PANEL_TABS = [
 
 function renderPanelBar(){
   el.panelBar.innerHTML = PANEL_TABS.map(function(t){
-    return '<button class="panel-tab'+(state.panelTab===t.id?" on":"")+'" data-ptab="'+t.id+'">'+t.label+
-           (t.cnt?'<span class="cnt">'+t.cnt+'</span>':'')+'</button>';
+    return '<button class="panel-tab'+(state.panelTab===t.id?" on":"")+'" data-ptab="'+t.id+'">'+t.label+'</button>';
   }).join("") +
   '<div class="grow"></div>'+
   '<button class="icon-btn" id="panel-clear" title="Limpar">'+ICO.trash+'</button>'+
@@ -1772,7 +1907,7 @@ var OUT_CHANNELS = {
   build:[
     { t:"> vite build", c:"var(--text-dim)" },
     { t:"" },
-    { t:"vite v8.0.0 building for production..." },
+    { t:"vite v8.2.0 building for production..." },
     { t:"✓ 42 modules transformed.", c:"var(--green)" },
     { t:"dist/index.html                  1.24 kB │ gzip:  0.61 kB" },
     { t:"dist/assets/index-a4f9c2.css     8.71 kB │ gzip:  2.44 kB" },
@@ -1782,7 +1917,7 @@ var OUT_CHANNELS = {
   git:[
     { t:"> git log --oneline -4", c:"var(--text-dim)" },
     { t:"" },
-    { t:"a7f3c21 feat: add contact.js" },
+    { t:"a7f3c21 feat: minimap + sticky scroll" },
     { t:"3d90b14 fix: update about.md" },
     { t:"c1e5f88 feat: skills.ts + panel" },
     { t:"9b2a007 init: project setup" }
@@ -1790,7 +1925,7 @@ var OUT_CHANNELS = {
   tasks:[
     { t:"> npm run dev", c:"var(--text-dim)" },
     { t:"" },
-    { t:"  VITE v8.0.0  ready in 284 ms", c:"var(--green)" },
+    { t:"  VITE v8.2.0  ready in 284 ms", c:"var(--green)" },
     { t:"" },
     { t:"  ➜  Local:   http://localhost:5173/", c:"var(--cyan)" },
     { t:"  ➜  Network: use --host to expose", c:"var(--text-dim)" }
@@ -1895,11 +2030,11 @@ function runTerm(raw){
          { text:"  igoralvesrodrigues12@gmail.com", color:"var(--text-dim)" }, { text:"" });
     return;
   }
-  if (cmd === "ls" || cmd === "ls -la"){
+  if (cmd === "ls" || cmd.indexOf("ls ") === 0){
     push({ text:"about.md   projects.json   skills.ts   contact.js   readme.md", color:"var(--yellow)" }, { text:"" });
     return;
   }
-  if (cmd.indexOf("theme") === 0){
+  if (/^theme(\s|$)/.test(cmd)){
     var th = cmd.split(" ")[1];
     if (THEMES.some(function(t){ return t.id === th; })){
       setTheme(th);
@@ -1909,13 +2044,20 @@ function runTerm(raw){
     }
     return;
   }
-  if (cmd.indexOf("grep ") === 0){
-    var term = raw.trim().slice(5).trim();
+  if (/^grep(\s|$)/.test(cmd)){
+    var term = raw.trim().slice(4).trim();
+    if (!term){
+      push({ text:"uso: grep <termo>", color:"var(--pink)" }, { text:"" });
+      return;
+    }
     var res = searchAll(term), n = 0;
     res.forEach(function(r){
       r.hits.forEach(function(h){
         n++;
-        push({ text:r.fid+":"+(h.line+1)+"  "+analyze(r.fid).texts[h.line].trim().slice(0,70) });
+        var where = h.line < 0 ? "rendered" : String(h.line + 1);
+        var text = h.line < 0 ? h.html.replace(/<[^>]+>/g, "")
+                              : analyze(r.fid).texts[h.line].trim();
+        push({ text:r.fid+":"+where+"  "+text.slice(0,70) });
       });
     });
     if (!n) push({ text:"grep: nenhum resultado para \""+term+"\"", color:"var(--pink)" });
@@ -1924,8 +2066,12 @@ function runTerm(raw){
     state.query = term; if (state.view === "search") renderSidebar();
     return;
   }
-  if (cmd.indexOf("cat ") === 0 || cmd.indexOf("open ") === 0){
+  if (/^(cat|open)(\s|$)/.test(cmd)){
     var arg = cmd.split(" ").slice(1).join(" ").trim();
+    if (!arg){
+      push({ text:"uso: "+cmd.split(" ")[0]+" <arquivo>   (ls lista os disponíveis)", color:"var(--pink)" }, { text:"" });
+      return;
+    }
     var fid = FILE_MAP[arg];
     if (fid){ push({ text:"→ Opening "+fid, color:"var(--text-dim)" }, { text:"" }); openFile(fid, false); }
     else push({ text:"bash: "+arg+": No such file", color:"var(--pink)" }, { text:"" });
@@ -2114,6 +2260,17 @@ el.sideResize.addEventListener("mousedown", function(e){
   window.addEventListener("mousemove", mm); window.addEventListener("mouseup", stop);
 });
 
+/* Enter e Espaço ativam as linhas clicáveis: árvore, outline, busca, menus e abas. */
+document.addEventListener("keydown", function(e){
+  if (e.key !== "Enter" && e.key !== " ") return;
+  var t = e.target;
+  if (!t || !t.getAttribute) return;
+  var role = t.getAttribute("role");
+  if (role !== "button" && role !== "tab") return;
+  e.preventDefault();
+  t.click();
+});
+
 /* Atalhos globais */
 document.addEventListener("keydown", function(e){
   if (e.key === "Escape"){ closeMenus(); if (qi.open) closeQuick(); return; }
@@ -2161,7 +2318,6 @@ renderChrome();
 paintTerm();
 syncCaret();
 booting = false;
-if (!isNarrow()) el.termInput.focus();
 console.log("igor-portfolio pronto — Ctrl+Shift+P para o command palette");
 })();
 
