@@ -563,7 +563,9 @@ svg{display:block;flex-shrink:0}
       <li><a href="https://github.com/igordev-exe/igor-portfolio">Portfólio interativo</a> — HTML, CSS, JavaScript</li>
       <li><a href="https://github.com/igordev-exe/SiteHC-FGA">SiteHC-FGA</a> — React, TypeScript, Tailwind CSS</li>
       <li><a href="https://github.com/igordev-exe/byte-and-brew">Byte &amp; Brew</a> — Java, POO</li>
-      <li>QuizMago — JavaScript · Batalha Naval — C · Prisma — TypeScript, CSS</li>
+      <li><a href="https://github.com/igordev-exe/QuizMago">QuizMago</a> — JavaScript</li>
+      <li><a href="https://github.com/igordev-exe/BatalhaNavalC">Batalha Naval</a> — C</li>
+      <li><a href="https://github.com/igordev-exe/Prisma">Prisma</a> — TypeScript, CSS</li>
     </ul>
 
     <h2>Habilidades</h2>
@@ -733,7 +735,7 @@ function openCV(download){
 }
 
 /* Projetos: mesma ordem do currículo. "short" vai para o projects.json,
-   "desc" para o card da rendered view. repo vazio = card sem link. */
+   "desc" para o card da rendered view. */
 var PROJECTS = [
   { name:"Portfólio interativo", stack:"HTML · CSS · JavaScript", color:"var(--orange)",
     tags:["JavaScript","Figma","GitHub Pages"], repo:"github.com/igordev-exe/igor-portfolio",
@@ -748,15 +750,15 @@ var PROJECTS = [
     short:"Sistema de vendas e fidelidade em Java, feito em equipe.",
     desc:"Sistema de vendas e fidelidade feito em equipe de 3: estoque, pontos para clientes VIP e regras de negócio com herança, polimorfismo e exceções customizadas." },
   { name:"QuizMago", stack:"HTML · CSS · JavaScript", color:"var(--yellow)",
-    tags:["JavaScript","HTML","CSS"], repo:"",
+    tags:["JavaScript","HTML","CSS"], repo:"github.com/igordev-exe/QuizMago",
     short:"Quiz web interativo em JavaScript.",
     desc:"Quiz web interativo, com foco em lógica de front-end e interação do usuário." },
   { name:"Batalha Naval", stack:"C", color:"var(--blue)",
-    tags:["C","Lógica de programação"], repo:"",
+    tags:["C","Lógica de programação"], repo:"github.com/igordev-exe/BatalhaNavalC",
     short:"Jogo de Batalha Naval em C.",
     desc:"Jogo de Batalha Naval implementado em C." },
   { name:"Prisma", stack:"TypeScript · CSS", color:"var(--purple)",
-    tags:["TypeScript","CSS","UI/UX"], repo:"",
+    tags:["TypeScript","CSS","UI/UX"], repo:"github.com/igordev-exe/Prisma",
     short:"Front-end focado em interface e experiência.",
     desc:"Projeto front-end focado em interface e experiência do usuário." }
 ];
@@ -1705,6 +1707,12 @@ var qi = { open:false, sel:0, items:[] };
 function fuzzy(q, s){
   if (!q) return { score:0, idx:[] };
   var ql = q.toLowerCase(), sl = s.toLowerCase(), i = 0, idx = [], score = 0, prev = -2;
+  /* Trecho contínuo ganha: "resume" destaca a palavra inteira, não letras soltas. */
+  var at = sl.indexOf(ql);
+  if (at >= 0){
+    for (var c=0;c<ql.length;c++) idx.push(at + c);
+    return { score: 100 + ql.length*4 - at*0.1 - s.length*0.01, idx: idx };
+  }
   for (var j=0; j<sl.length && i<ql.length; j++){
     if (sl[j] === ql[i]){
       idx.push(j);
