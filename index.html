@@ -4,15 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Igor Alves — Portfólio | Engenharia de Software (UnB/FGA)</title>
-<meta name="description" content="Portfólio de Igor Alves — Engenharia de Software (UnB/FGA). Front-end, Python e prototipação." />
+<meta name="description" content="Portfólio de Igor Alves — Engenharia de Software (UnB/FGA). Desenvolvimento de software, IA aplicada e UI/UX." />
 <meta name="author" content="Igor Alves" />
 <meta name="theme-color" content="#0d1117" />
 <meta property="og:type" content="profile" />
 <meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://igordev-exe.github.io/igor-portfolio/" />
 <meta property="og:title" content="Igor Alves — Portfólio" />
-<meta property="og:description" content="Engenharia de Software (UnB/FGA). Front-end, Python e prototipação. Buscando estágio." />
-<meta property="og:image" content="https://igordev-exe.github.io/og-cover.png" />
-<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:description" content="Engenharia de Software (UnB/FGA). Desenvolvimento de software, IA aplicada e UI/UX. Buscando estágio." />
+<meta name="twitter:card" content="summary" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230d1117'/%3E%3Ctext x='8' y='11.5' text-anchor='middle' font-family='monospace' font-size='9' font-weight='700' fill='%233fb950'%3E&gt;_%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -329,14 +329,16 @@ svg{display:block;flex-shrink:0}
 .rich{border-top:1px solid var(--border-dim);margin:0 0 40px;padding:24px 20px}
 .rich-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:20px}
 .rich h4{font-size:11px;font-weight:400;color:var(--text-dim);margin-bottom:14px;letter-spacing:1px}
-.grid-skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 32px}
-.grid-skills.wide{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 48px}
 .grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.skill{margin-bottom:10px}
-.skill-head{display:flex;justify-content:space-between;margin-bottom:4px;font-size:11px}
-.skill-head .pct{color:var(--text-dim)}
-.skill-track{height:3px;background:var(--border-dim);overflow:hidden}
-.skill-fill{height:100%;width:0;opacity:.85;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.tier{display:flex;gap:14px;align-items:baseline;margin-bottom:10px;flex-wrap:wrap}
+.tier-k{font-size:11px;color:var(--text-dim);width:150px;flex-shrink:0}
+.badge.learning{border-style:dashed;background:none}
+.skill-group{margin-bottom:22px}
+.card-link{
+  display:inline-flex;align-items:center;gap:5px;margin-top:12px;font-size:11px;
+  color:var(--text-dim);text-decoration:none;word-break:break-all;
+}
+.card-link:hover{color:var(--text-bright);text-decoration:underline}
 .exp{border-left:2px solid var(--border);padding-left:14px;margin-bottom:10px}
 .exp summary{cursor:pointer;user-select:none;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .exp summary::-webkit-details-marker{display:none}
@@ -531,34 +533,51 @@ svg{display:block;flex-shrink:0}
   <div class="nojs"><div class="wrap">
     <h1>Igor Alves</h1>
     <p>Estudante de Engenharia de Software (UnB/FGA) · Brasília, DF</p>
-    <p>Buscando estágio em desenvolvimento front-end ou fullstack.</p>
+    <p>Desenvolvimento de Software, IA aplicada e UI/UX. Buscando estágio em desenvolvimento de software.</p>
+    <p><a href="cv-igor-alves.pdf">Baixar currículo (PDF)</a></p>
 
     <h2>Sobre</h2>
-    <p>Desenvolvo do protótipo em Figma à interface em front-end. Python e HTML/CSS no dia a dia,
-       Java/POO em projetos com regras de negócio reais. Experiência em levantamento de requisitos,
-       UX e análise de dados.</p>
+    <p>Estudante de Engenharia de Software com base em Python e Java e experiência na ponte entre
+       design e código: prototipo no Figma e implemento interfaces web. Na iniciação científica,
+       projetei um protocolo de análise documental com LLMs, com regras de validação e
+       rastreabilidade de cada evidência até a fonte.</p>
+
+    <h2>Formação</h2>
+    <p>Bacharelado em Engenharia de Software — UnB, Faculdade do Gama (FGA) · 3º semestre ·
+       ago 2025 – 2030 (previsão)</p>
+    <p>Disponibilidade: grade flexível, montada conforme o horário do estágio · remoto (preferência) ou híbrido.</p>
 
     <h2>Experiência</h2>
     <ul>
-      <li>Pesquisador (PIBIC) — UnB, PPGDH/CEAM · jul 2026 – atual</li>
-      <li>Monitor — UnB/FGA · 2026.2 – atual</li>
-      <li>Trainee — Orc'estra Gamificação (Empresa Júnior) · abr 2026 – jul 2026</li>
-      <li>Assistente Administrativo — Real Expresso / SEST SENAT · fev 2025 – ago 2025</li>
+      <li>Pesquisador Bolsista — Iniciação Científica (PIBIC) — UnB, PPGDH/CEAM · jul 2026 – atual.
+          Protocolo de extração com LLMs (16 regras de validação, evidências rastreáveis até a página de origem);
+          400+ documentos processados e 2.600+ evidências catalogadas.</li>
+      <li>Monitor — Humanidades e Cidadania — UnB/FGA · ago 2026 – atual.
+          2 turmas (cerca de 210 alunos), ambiente no Microsoft Teams e tutorial de LaTeX (Overleaf).</li>
+      <li>Trainee — Design/UX e Requisitos — Orc'estra Gamificação (Empresa Júnior) · abr 2026 – jul 2026</li>
+      <li>Jovem Aprendiz — Assistente Administrativo — Real Expresso / SEST SENAT · fev 2025 – ago 2025</li>
     </ul>
 
     <h2>Projetos</h2>
     <ul>
-      <li>Byte &amp; Brew — Java, POO</li>
-      <li>QuizMago — HTML, CSS, JavaScript</li>
-      <li>Prisma — CSS, TypeScript</li>
-      <li>SiteHC-FGA — TypeScript</li>
+      <li><a href="https://github.com/igordev-exe/igor-portfolio">Portfólio interativo</a> — HTML, CSS, JavaScript</li>
+      <li><a href="https://github.com/igordev-exe/SiteHC-FGA">SiteHC-FGA</a> — React, TypeScript, Tailwind CSS</li>
+      <li><a href="https://github.com/igordev-exe/byte-and-brew">Byte &amp; Brew</a> — Java, POO</li>
+      <li>QuizMago — JavaScript · Batalha Naval — C · Prisma — TypeScript, CSS</li>
     </ul>
+
+    <h2>Habilidades</h2>
+    <p>Linguagens: Python, Java, HTML, CSS · em desenvolvimento: JavaScript, TypeScript, SQL, C</p>
+    <p>Front-end e design: React, Tailwind CSS, layout responsivo, Figma, Penpot, prototipação, UI/UX, pesquisa com usuário</p>
+    <p>Dados e IA: IA generativa (LLMs), engenharia de prompt, desenvolvimento assistido por IA, análise de dados, CSV, Excel</p>
+    <p>Ferramentas: Git e GitHub, GitHub Pages, VS Code, LaTeX (Overleaf), Microsoft Teams</p>
 
     <h2>Contato</h2>
     <ul>
       <li><a href="mailto:igoralvesrodrigues12@gmail.com">igoralvesrodrigues12@gmail.com</a></li>
       <li><a href="https://github.com/igordev-exe">github.com/igordev-exe</a></li>
       <li><a href="https://www.linkedin.com/in/igordev-exe">linkedin.com/in/igordev-exe</a></li>
+      <li><a href="cv-igor-alves.pdf">Currículo em PDF</a></li>
     </ul>
 
     <p class="tip">Esta é a versão sem JavaScript. Com o JS ativado a página vira um editor navegável.</p>
@@ -677,6 +696,7 @@ var ICO = {
   bell:'<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 6.6a4 4 0 0 1 8 0c0 3 1 4.2 1 4.2H3s1-1.2 1-4.2z"/><path d="M6.6 12.8a1.6 1.6 0 0 0 2.8 0" stroke-linecap="round"/></svg>',
   play:'<svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.5 3l8 5-8 5z"/></svg>',
   sym:'<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6.4 2.5L4.6 13.5M11.4 2.5L9.6 13.5M2.6 6h11M2 10h11" stroke-linecap="round"/></svg>',
+  repo:'<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M3.5 13V3.2A1.2 1.2 0 0 1 4.7 2h7.8v9.5H4.7a1.2 1.2 0 0 0 0 2.4h7.8"/></svg>',
   trash:'<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M2.8 4h10.4M6 4V2.6h4V4M4.2 4l.6 9.4h6.4L11.8 4"/></svg>'
 };
 
@@ -687,6 +707,9 @@ function fileIcon(id, size){
     return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 16 16" fill="none" stroke="#519aba" stroke-width="1.1" stroke-linejoin="round"><rect x="1.2" y="3.4" width="13.6" height="9.2" rx="1.3"/><path d="M3.6 10.6V5.9l2 2.4 2-2.4v4.7" stroke-linecap="round"/><path d="M10.6 5.9v4.2M9 8.6l1.6 1.7L12.2 8.6" stroke-linecap="round"/></svg>';
   if (id.slice(-5) === ".json")
     return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 16 16" fill="none" stroke="#cbcb41" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6.4 2.4c-1.7 0-1.7 1.9-1.7 3.1 0 1.3-.5 2.5-1.9 2.5 1.4 0 1.9 1.2 1.9 2.5 0 1.2 0 3.1 1.7 3.1"/><path d="M9.6 2.4c1.7 0 1.7 1.9 1.7 3.1 0 1.3.5 2.5 1.9 2.5-1.4 0-1.9 1.2-1.9 2.5 0 1.2 0 3.1-1.7 3.1"/></svg>';
+  if (id.slice(-4) === ".pdf")
+    return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 16 16"><path d="M3.2 1.2h6.6l3 3v10.6H3.2z" fill="#e5484d"/><path d="M9.8 1.2v3h3" fill="#b8383c"/>'+
+           '<text x="8" y="12" text-anchor="middle" font-family="ui-monospace,monospace" font-size="4.6" font-weight="700" fill="#ffffff">PDF</text></svg>';
   var isTS = id.slice(-3) === ".ts";
   var bg = isTS ? "#3178c6" : "#f7df1e", fg = isTS ? "#ffffff" : "#20200f";
   return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2.2" fill="'+bg+'"/>'+
@@ -695,6 +718,136 @@ function fileIcon(id, size){
 
 /* Telefone montado em partes: bot de scraping não leva o número pronto do HTML. */
 var PHONE = ["(61) ", "98578", "-", "8358"].join("");
+
+/* Currículo: o PDF fica na raiz do repositório, ao lado deste index.html. */
+var CV_FILE = "cv-igor-alves.pdf";
+var CV_URL  = CV_FILE;
+function openCV(download){
+  if (download){
+    var a = document.createElement("a");
+    a.href = CV_URL; a.download = "Curriculo_Igor_Alves.pdf";
+    document.body.appendChild(a); a.click(); a.parentNode.removeChild(a);
+    return;
+  }
+  window.open(CV_URL, "_blank", "noopener");
+}
+
+/* Projetos: mesma ordem do currículo. "short" vai para o projects.json,
+   "desc" para o card da rendered view. repo vazio = card sem link. */
+var PROJECTS = [
+  { name:"Portfólio interativo", stack:"HTML · CSS · JavaScript", color:"var(--orange)",
+    tags:["JavaScript","Figma","GitHub Pages"], repo:"github.com/igordev-exe/igor-portfolio",
+    short:"Este site: um VS Code navegável, feito sem frameworks.",
+    desc:"Simula o VS Code: explorador de arquivos, abas, terminal com comandos, command palette, 3 temas e versão mobile. Prototipado no Figma, feito sem frameworks e navegável mesmo sem JavaScript. Você está nele agora." },
+  { name:"SiteHC-FGA", stack:"React · TypeScript · Tailwind CSS", color:"var(--green)",
+    tags:["React","TypeScript","Tailwind CSS"], repo:"github.com/igordev-exe/SiteHC-FGA",
+    short:"Blog da disciplina Humanidades e Cidadania (SPA em React).",
+    desc:"Blog da disciplina Humanidades e Cidadania, feito a pedido acadêmico: SPA em React com componentes reutilizáveis e layout responsivo." },
+  { name:"Byte & Brew", stack:"Java · POO", color:"var(--cyan)",
+    tags:["Java","POO","Equipe de 3"], repo:"github.com/igordev-exe/byte-and-brew",
+    short:"Sistema de vendas e fidelidade em Java, feito em equipe.",
+    desc:"Sistema de vendas e fidelidade feito em equipe de 3: estoque, pontos para clientes VIP e regras de negócio com herança, polimorfismo e exceções customizadas." },
+  { name:"QuizMago", stack:"HTML · CSS · JavaScript", color:"var(--yellow)",
+    tags:["JavaScript","HTML","CSS"], repo:"",
+    short:"Quiz web interativo em JavaScript.",
+    desc:"Quiz web interativo, com foco em lógica de front-end e interação do usuário." },
+  { name:"Batalha Naval", stack:"C", color:"var(--blue)",
+    tags:["C","Lógica de programação"], repo:"",
+    short:"Jogo de Batalha Naval em C.",
+    desc:"Jogo de Batalha Naval implementado em C." },
+  { name:"Prisma", stack:"TypeScript · CSS", color:"var(--purple)",
+    tags:["TypeScript","CSS","UI/UX"], repo:"",
+    short:"Front-end focado em interface e experiência.",
+    desc:"Projeto front-end focado em interface e experiência do usuário." }
+];
+
+function projectsJsonLines(){
+  var out = [];
+  PROJECTS.forEach(function(p, i){
+    out.push([pnc("    {")]);
+    out.push([prp('      "name"'), pnc(":  "), str('"'+p.name+'"'), pnc(",")]);
+    out.push([prp('      "stack"'), pnc(": "), str('"'+p.stack.replace(/ · /g, ", ")+'"'), pnc(",")]);
+    out.push([prp('      "desc"'), pnc(":  "), str('"'+p.short+'"'), pnc(",")]);
+    var tags = [prp('      "tags"'), pnc(":  [")];
+    p.tags.forEach(function(t, j){ if (j) tags.push(pnc(", ")); tags.push(str('"'+t+'"')); });
+    tags.push(pnc(p.repo ? "]," : "]"));
+    out.push(tags);
+    if (p.repo) out.push([prp('      "repo"'), pnc(":  "), str('"'+p.repo+'"')]);
+    out.push([pnc(i < PROJECTS.length - 1 ? "    }," : "    }")]);
+  });
+  return out;
+}
+
+/* Habilidades: mesmo recorte do currículo, sem porcentagens.
+   Linguagens em dois níveis; o resto em grupos. */
+var SKILLS = {
+  daily: [
+    { name:"Python", color:"var(--yellow)" },
+    { name:"Java",   color:"var(--blue)" },
+    { name:"HTML",   color:"var(--pink)" },
+    { name:"CSS",    color:"var(--cyan)" }
+  ],
+  learning: ["JavaScript","TypeScript","SQL","C"],
+  groups: [
+    { id:"frontend",  title:"Front-end e design", color:"var(--purple)",
+      items:["React","Tailwind CSS","Layout responsivo","Figma","Penpot","Prototipação","UI/UX","Pesquisa com usuário"] },
+    { id:"dataAI",    title:"Dados e IA", color:"var(--green)",
+      items:["IA generativa (LLMs)","Engenharia de prompt","Desenvolvimento assistido por IA","Análise de dados","CSV","Excel"] },
+    { id:"tools",     title:"Ferramentas", color:"var(--orange)",
+      items:["Git e GitHub","GitHub Pages","VS Code","LaTeX (Overleaf)","Microsoft Teams"] },
+    { id:"practices", title:"Práticas", color:"var(--cyan)",
+      items:["Lógica de programação","Orientação a Objetos (POO)","Levantamento de requisitos","Métodos ágeis","Documentação técnica"] }
+  ]
+};
+
+/* Quebra uma lista de strings em linhas de código de até ~58 colunas. */
+function strListLines(items, indent){
+  var lines = [], cur = [], width = indent.length;
+  items.forEach(function(s, i){
+    var piece = '"' + s + '"' + ", ";
+    if (cur.length && width + piece.length > 58){ lines.push(cur); cur = []; width = indent.length; }
+    cur.push(s); width += piece.length;
+  });
+  if (cur.length) lines.push(cur);
+  return lines.map(function(row){
+    var toks = [pl(indent)];
+    row.forEach(function(s, j){
+      if (j) toks.push(pnc(", "));
+      toks.push(str('"' + s + '"'));
+    });
+    toks.push(pnc(","));
+    return toks;
+  });
+}
+
+function skillsTsLines(){
+  var L = [
+    [cmt("// skills.ts — o mesmo recorte do currículo, sem porcentagens")],
+    [pl("")],
+    [cmt("// Linguagens: o que uso no dia a dia e o que estou desenvolvendo")],
+    [kw("export const"), pl(" "), vr("languages"), pl(" "), op("="), pl(" "), pnc("{")],
+    [pl("  "), prp("daily"), pnc(":    [")].concat(
+      SKILLS.daily.map(function(s, i){ return [i ? pnc(", ") : pl(""), str('"'+s.name+'"')]; })
+        .reduce(function(a, b){ return a.concat(b); }, []), [pnc("],")]),
+    [pl("  "), prp("learning"), pnc(": [")].concat(
+      SKILLS.learning.map(function(s, i){ return [i ? pnc(", ") : pl(""), str('"'+s+'"')]; })
+        .reduce(function(a, b){ return a.concat(b); }, []), [pnc("],")]),
+    [pnc("}"), pl(" "), kw("as const")],
+    [pl("")]
+  ];
+  SKILLS.groups.forEach(function(g){
+    L.push([cmt("// " + g.title)]);
+    L.push([kw("export const"), pl(" "), vr(g.id), op(": "), typ("string"), pnc("[]"), pl(" "), op("="), pl(" "), pnc("[")]);
+    L = L.concat(strListLines(g.items, "  "));
+    L.push([pnc("]")]);
+    L.push([pl("")]);
+  });
+  var exp = [kw("export default"), pl(" "), pnc("{ "), vr("languages")];
+  SKILLS.groups.forEach(function(g){ exp.push(pnc(", ")); exp.push(vr(g.id)); });
+  exp.push(pnc(" }"));
+  L.push(exp);
+  return L;
+}
 
 /* Conteúdo dos arquivos */
 var FILES = {
@@ -725,6 +878,8 @@ var FILES = {
     [str("  $ theme monokai"), cmt("  — troca o tema")],
     [str("  $ whoami"), cmt("         — informações sobre mim")],
     [str("  $ status"), cmt("         — disponibilidade")],
+    [str("  $ cv"), cmt("             — abre meu currículo (PDF)")],
+    [str("  $ cv --download"), cmt("  — baixa o currículo")],
     [str("  $ clear"), cmt("          — limpa o terminal")],
     [pl("")],
     [tag("## Atalhos")],
@@ -740,22 +895,37 @@ var FILES = {
     [tag("# Igor Alves")],
     [pl("")],
     [cmt("Estudante de Engenharia de Software (UnB/FGA)")],
-    [cmt("Brasília, DF · Desenvolvimento Front-end, Python e Prototipação")],
+    [cmt("Brasília, DF · Desenvolvimento de Software, IA aplicada e UI/UX")],
     [pl("")],
     [tag("## Resumo")],
     [pl("")],
-    [pl("Desenvolvo do protótipo em Figma à interface em front-end.")],
-    [pl("Python e HTML/CSS no dia a dia, Java/POO em projetos com")],
-    [pl("regras de negócio reais. Experiência em levantamento de")],
-    [pl("requisitos, UX e análise de dados.")],
+    [pl("Base em Python e Java e experiência na ponte entre design")],
+    [pl("e código: prototipo no Figma e implemento interfaces web.")],
+    [pl("Na iniciação científica, projetei um protocolo de análise")],
+    [pl("documental com LLMs, com regras de validação e")],
+    [pl("rastreabilidade de cada evidência até a fonte.")],
     [pl("")],
-    [pl("Buscando estágio em desenvolvimento front-end ou fullstack.")],
+    [pl("Busco estágio em desenvolvimento de software.")],
     [pl("")],
     [tag("## Formação")],
     [pl("")],
     [prp("Instituição:  "), pl("Universidade de Brasília (UnB — FGA)")],
     [prp("Curso:        "), pl("Bacharelado em Engenharia de Software")],
-    [prp("Período:      "), pl("ago 2025 – ago 2030 (em curso)")],
+    [prp("Período:      "), pl("3º semestre · ago 2025 – 2030 (previsão)")],
+    [pl("")],
+    [prp("Disciplinas cursadas:")],
+    [pnc("- "), pl("Algoritmos e Programação de Computadores")],
+    [pnc("- "), pl("Orientação a Objetos")],
+    [pnc("- "), pl("Métodos de Desenvolvimento de Software")],
+    [pl("")],
+    [tag("## Disponibilidade")],
+    [pl("")],
+    [pl("Grade flexível, montada conforme o horário do estágio.")],
+    [pl("Remoto (preferência) ou híbrido.")],
+    [pl("")],
+    [tag("## Currículo")],
+    [pl("")],
+    [pl("PDF em "), str(CV_FILE), cmt("  → no terminal: cv")],
     [pl("")],
     [tag("## Idiomas")],
     [pl("")],
@@ -767,66 +937,13 @@ var FILES = {
     [pnc("{")],
     [prp('  "author"'), pnc(": "), str('"Igor Alves"'), pnc(",")],
     [prp('  "github"'), pnc(": "), str('"github.com/igordev-exe"'), pnc(",")],
-    [prp('  "projects"'), pnc(": [")],
-    [pnc("    {")],
-    [prp('      "name"'), pnc(":  "), str('"Byte & Brew"'), pnc(",")],
-    [prp('      "stack"'), pnc(": "), str('"Java, POO"'), pnc(",")],
-    [prp('      "desc"'), pnc(":  "), str('"Sistema de vendas e fidelidade com controle de estoque e pontos VIP."'), pnc(",")],
-    [prp('      "tags"'), pnc(":  ["), str('"Java"'), pnc(", "), str('"POO"'), pnc(", "), str('"Business Rules"'), pnc("]")],
-    [pnc("    },")],
-    [pnc("    {")],
-    [prp('      "name"'), pnc(":  "), str('"QuizMago"'), pnc(",")],
-    [prp('      "stack"'), pnc(": "), str('"HTML, CSS, JavaScript"'), pnc(",")],
-    [prp('      "desc"'), pnc(":  "), str('"App web de quiz interativo com foco em UX e lógica front-end."'), pnc(",")],
-    [prp('      "tags"'), pnc(":  ["), str('"JavaScript"'), pnc(", "), str('"HTML"'), pnc(", "), str('"CSS"'), pnc("]")],
-    [pnc("    },")],
-    [pnc("    {")],
-    [prp('      "name"'), pnc(":  "), str('"Prisma"'), pnc(",")],
-    [prp('      "stack"'), pnc(": "), str('"CSS, TypeScript"'), pnc(",")],
-    [prp('      "desc"'), pnc(":  "), str('"Projeto front-end focado em interface e experiência do usuário."'), pnc(",")],
-    [prp('      "tags"'), pnc(":  ["), str('"TypeScript"'), pnc(", "), str('"CSS"'), pnc(", "), str('"UI/UX"'), pnc("]")],
-    [pnc("    },")],
-    [pnc("    {")],
-    [prp('      "name"'), pnc(":  "), str('"SiteHC-FGA"'), pnc(",")],
-    [prp('      "stack"'), pnc(": "), str('"TypeScript"'), pnc(",")],
-    [prp('      "desc"'), pnc(":  "), str('"Site desenvolvido em TypeScript a pedido acadêmico."'), pnc(",")],
-    [prp('      "tags"'), pnc(":  ["), str('"TypeScript"'), pnc(", "), str('"Front-end"'), pnc("]")],
-    [pnc("    }")],
+    [prp('  "projects"'), pnc(": [")]
+  ].concat(projectsJsonLines(), [
     [pnc("  ]")],
     [pnc("}")]
-  ]},
+  ])},
 
-  "skills.ts": { lang:"TypeScript", lines:[
-    [kw("import"), pl(" type { Skill } "), kw("from"), str(' "./types"')],
-    [pl("")],
-    [cmt("// Linguagens de programação")],
-    [kw("const"), pl(" "), vr("languages"), op(": "), typ("Skill"), pnc("[] = [")],
-    [pl("  { "), prp("name"), pnc(": "), str('"Python"'), pnc(", "), prp("lvl"), pnc(": "), num("50"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"JavaScript"'), pnc(", "), prp("lvl"), pnc(": "), num("60"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"TypeScript"'), pnc(", "), prp("lvl"), pnc(": "), num("55"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"Java"'), pnc(", "), prp("lvl"), pnc(": "), num("60"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"HTML/CSS"'), pnc(", "), prp("lvl"), pnc(": "), num("75"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"SQL"'), pnc(", "), prp("lvl"), pnc(": "), num("45"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"C"'), pnc(", "), prp("lvl"), pnc(": "), num("65"), pnc(" },")],
-    [pnc("]")],
-    [pl("")],
-    [cmt("// Design & Ferramentas")],
-    [kw("const"), pl(" "), vr("tools"), op(": "), typ("Skill"), pnc("[] = [")],
-    [pl("  { "), prp("name"), pnc(": "), str('"Figma"'), pnc(", "), prp("lvl"), pnc(": "), num("85"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"Git"'), pnc(", "), prp("lvl"), pnc(": "), num("78"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"VS Code"'), pnc(", "), prp("lvl"), pnc(": "), num("90"), pnc(" },")],
-    [pl("  { "), prp("name"), pnc(": "), str('"AI-assisted dev"'), pnc(", "), prp("lvl"), pnc(": "), num("80"), pnc(" },")],
-    [pnc("]")],
-    [pl("")],
-    [cmt("// Conceitos")],
-    [kw("const"), pl(" "), vr("concepts"), op(": "), typ("string"), pnc("[] = [")],
-    [pl("  "), str('"POO"'), pnc(", "), str('"Modelagem de Domínio"'), pnc(", "), str('"Regras de Negócio"'), pnc(",")],
-    [pl("  "), str('"UX/UI"'), pnc(", "), str('"Prototipação"'), pnc(", "), str('"Levantamento de Requisitos"'), pnc(",")],
-    [pl("  "), str('"Metodologias Ágeis"'), pnc(", "), str('"Análise de Dados"'), pnc(", "), str('"Documentação Técnica"')],
-    [pnc("]")],
-    [pl("")],
-    [kw("export default"), pl(" { "), vr("languages"), pnc(", "), vr("tools"), pnc(", "), vr("concepts"), pnc(" }")]
-  ]},
+  "skills.ts": { lang:"TypeScript", lines:skillsTsLines() },
 
   "contact.js": { lang:"JavaScript", lines:[
     [cmt("// contact.js — Vamos construir algo juntos")],
@@ -837,7 +954,9 @@ var FILES = {
     [prp("  linkedin"), pnc(": "), str('"linkedin.com/in/igordev-exe"'), pnc(",")],
     [prp("  phone"), pnc(":    "), str('"' + PHONE + '"'), pnc(",")],
     [prp("  location"), pnc(": "), str('"Brasília, DF"'), pnc(",")],
+    [prp("  cv"), pnc(":       "), str('"./' + CV_FILE + '"'), pnc(","), cmt("  // ou digite cv no terminal")],
     [prp("  status"), pnc(":   "), str('"open to internship opportunities"'), pnc(",")],
+    [prp("  mode"), pnc(":     "), str('"remoto (preferência) ou híbrido"'), pnc(",")],
     [pnc("};")],
     [pl("")],
     [cmt("/**")],
@@ -857,52 +976,20 @@ var FILES = {
 
 var TREE_FILES = ["readme.md","about.md","projects.json","skills.ts","contact.js"];
 
-var LANG_SKILLS = [
-  { name:"HTML/CSS",   lvl:75, color:"var(--pink)" },
-  { name:"Python",     lvl:50, color:"var(--yellow)" },
-  { name:"JavaScript", lvl:60, color:"var(--orange)" },
-  { name:"TypeScript", lvl:55, color:"var(--cyan)" },
-  { name:"Java",       lvl:60, color:"var(--blue)" },
-  { name:"C",          lvl:65, color:"var(--green)" },
-  { name:"SQL",        lvl:45, color:"var(--purple)" }
-];
-
-var TOOL_SKILLS = [
-  { name:"Figma",           lvl:85, color:"var(--purple)" },
-  { name:"VS Code",         lvl:90, color:"var(--blue)" },
-  { name:"AI-assisted dev", lvl:80, color:"var(--green)" },
-  { name:"Git",             lvl:78, color:"var(--orange)" }
-];
-
-var CONCEPTS = ["POO","Modelagem de Domínio","Regras de Negócio","UX/UI","Prototipação",
-                "Levantamento de Requisitos","Metodologias Ágeis","Análise de Dados","Documentação Técnica"];
-
 var EXPERIENCE = [
-  { role:"Pesquisador (PIBIC)", org:"UnB — PPGDH/CEAM", period:"jul 2026 – atual", color:"var(--green)",
-    points:["Selecionado por processo acadêmico para atuar em programa de pós-graduação.",
-            "Organizo e analiso bases de dados públicos, estruturando informação complexa.",
-            "Produzo documentação técnica de apoio às pesquisas do grupo."] },
-  { role:"Monitor", org:"UnB — FGA", period:"2026.2 – atual", color:"var(--purple)",
-    points:["Monitoria de disciplina da graduação, com atendimento a alunos e apoio ao professor.",
-            "Resolução de dúvidas e acompanhamento de exercícios ao longo do semestre."] },
-  { role:"Trainee — Empresa Júnior", org:"Orc'estra Gamificação", period:"abr 2026 – jul 2026", color:"var(--cyan)",
-    points:["Levantamento de requisitos diretamente com clientes, do contato à definição de escopo.",
-            "Prototipação de interfaces no Figma, do conceito à entrega.",
-            "Atuação em equipe com metodologia ágil, integrando design e desenvolvimento."] },
-  { role:"Assistente Administrativo", org:"Real Expresso / SEST SENAT", period:"fev 2025 – ago 2025", color:"var(--yellow)",
-    points:["Jovem Aprendiz. Organização de documentos, controle de planilhas e atendimento.",
-            "Desenvolvi organização, comunicação e responsabilidade profissional."] }
-];
-
-var PROJECTS = [
-  { name:"Byte & Brew", stack:"Java · POO", color:"var(--cyan)", tags:["Java","POO","Business Rules"],
-    desc:"Sistema de vendas e fidelidade com controle de estoque e pontos VIP." },
-  { name:"QuizMago", stack:"HTML · CSS · JavaScript", color:"var(--yellow)", tags:["JavaScript","HTML","CSS"],
-    desc:"App web de quiz interativo com foco em UX e lógica front-end." },
-  { name:"Prisma", stack:"CSS · TypeScript", color:"var(--purple)", tags:["TypeScript","CSS","UI/UX"],
-    desc:"Projeto front-end focado em interface e experiência do usuário." },
-  { name:"SiteHC-FGA", stack:"TypeScript", color:"var(--green)", tags:["TypeScript","Front-end"],
-    desc:"Site desenvolvido em TypeScript a pedido acadêmico." }
+  { role:"Pesquisador Bolsista — Iniciação Científica (PIBIC)", org:"Universidade de Brasília — PPGDH/CEAM", period:"jul 2026 – atual", color:"var(--green)",
+    points:["Analiso documentos oficiais para pesquisa nacional sobre a trajetória das mulheres nas instituições de segurança pública, com acervo estimado em 3.500 documentos de cerca de 80 instituições.",
+            "Projetei um protocolo de extração com LLMs (engenharia de prompt): prompt modular com 16 regras de validação, dicionário de códigos padronizados e IDs rastreáveis que ligam cada evidência ao documento e à página de origem.",
+            "Estruturei o processamento em lotes, com saída em CSV, conferência de controle e versionamento do protocolo.",
+            "Processei mais de 400 documentos de 18 instituições, com mais de 2.600 evidências catalogadas, e entrego relatórios com gráficos e planilhas de rastreabilidade em Excel."] },
+  { role:"Monitor — Humanidades e Cidadania", org:"Universidade de Brasília — Faculdade do Gama (FGA)", period:"ago 2026 – atual", color:"var(--purple)",
+    points:["Apoio a docência de 2 turmas (cerca de 210 alunos): planejamento de aulas, correções e controle de frequência.",
+            "Administro o ambiente da disciplina no Microsoft Teams e criei um tutorial de LaTeX (Overleaf) para autoestudo dos alunos."] },
+  { role:"Trainee — Design/UX e Requisitos", org:"Orc'estra Gamificação — Empresa Júnior", period:"abr 2026 – jul 2026", color:"var(--cyan)",
+    points:["Conduzi levantamento de requisitos e pesquisa com usuário diretamente com clientes, do primeiro contato à definição de escopo.",
+            "Desenhei fluxos de UX e prototipei interfaces no Figma, integrando design e desenvolvimento em equipe ágil."] },
+  { role:"Jovem Aprendiz — Assistente Administrativo", org:"Real Expresso / SEST SENAT", period:"fev 2025 – ago 2025", color:"var(--yellow)",
+    points:["Apoiei rotinas administrativas de controle de planilhas, organização de documentos e atendimento ao público."] }
 ];
 
 var CONTACTS = [
@@ -910,7 +997,8 @@ var CONTACTS = [
   { label:"GitHub",   value:"github.com/igordev-exe",         href:"https://github.com/igordev-exe",        color:"var(--green)" },
   { label:"LinkedIn", value:"linkedin.com/in/igordev-exe",    href:"https://www.linkedin.com/in/igordev-exe", color:"var(--blue)" },
   { label:"Phone",    value:PHONE,                            href:"tel:+55" + PHONE.replace(/\D/g,""),     color:"var(--text-dim)" },
-  { label:"Location", value:"Brasília, DF",                   href:null,                                    color:"var(--text-dim)" }
+  { label:"Location", value:"Brasília, DF",                   href:null,                                    color:"var(--text-dim)" },
+  { label:"CV",       value:CV_FILE + " ↗",                   href:CV_URL, newTab:true,                     color:"var(--orange)" }
 ];
 
 /* Datas reais: o "há quanto tempo" é calculado, não escrito na mão. */
@@ -926,6 +1014,7 @@ function ago(iso){
 }
 
 var COMMITS = [
+  { msg:"feat: cv command + new resume", date:"2026-09-23" },
   { msg:"feat: minimap + sticky scroll", date:"2026-08-22" },
   { msg:"fix: update about.md",          date:"2026-08-18" },
   { msg:"feat: skills.ts + panel",       date:"2026-08-10" },
@@ -935,7 +1024,8 @@ var COMMITS = [
 var CHANGES = [
   { file:"about.md",      badge:"M", color:"var(--orange)" },
   { file:"projects.json", badge:"M", color:"var(--orange)" },
-  { file:"contact.js",    badge:"A", color:"var(--green)" }
+  { file:"skills.ts",     badge:"M", color:"var(--orange)" },
+  { file:"contact.js",    badge:"M", color:"var(--orange)" }
 ];
 
 var EXTENSIONS = [
@@ -943,10 +1033,14 @@ var EXTENSIONS = [
     desc:"Do wireframe ao design system. Handoff de componentes direto para o front-end." },
   { name:"Git", ver:"v2.45.0", bg:"#f05033", ini:"Gi", pub:"Versionamento",
     desc:"Branches, pull requests e resolução de conflitos em trabalho de equipe." },
+  { name:"LLMs & Prompts", ver:"v1.6.0", bg:"#d97757", ini:"LL", pub:"IA aplicada",
+    desc:"Protocolos de extração com prompt modular, regras de validação e evidências rastreáveis até a fonte." },
   { name:"AI-assisted dev", ver:"v1.0.0", bg:"#10a37f", ini:"AI", pub:"Produtividade",
     desc:"Vibecode: prototipagem rápida com IA, revisando e refatorando o que ela gera." },
   { name:"Levantamento de requisitos", ver:"v3.1.0", bg:"#3178c6", ini:"RQ", pub:"Processo",
-    desc:"Entrevista com cliente, definição de escopo e documentação técnica." },
+    desc:"Entrevista com cliente, pesquisa com usuário, definição de escopo e documentação técnica." },
+  { name:"LaTeX (Overleaf)", ver:"", bg:"#47a141", ini:"TeX", pub:"Documentação",
+    desc:"Documentos acadêmicos e um tutorial de autoestudo para as turmas da monitoria." },
   { name:"Metodologias Ágeis", ver:"v2.0.0", bg:"#e3b341", ini:"Ag", pub:"Time",
     desc:"Scrum e Kanban aplicados em empresa júnior e projetos acadêmicos." }
 ];
@@ -960,13 +1054,12 @@ var RICH_INDEX = {};
     add("about.md", e.role + " · " + e.org + " · " + e.period);
     e.points.forEach(function(p){ add("about.md", p); });
   });
-  LANG_SKILLS.concat(TOOL_SKILLS).forEach(function(s){ add("about.md", s.name + " — " + s.lvl + "%"); });
+  add("about.md", "Linguagens (dia a dia): " + SKILLS.daily.map(function(s){ return s.name; }).join(", "));
+  add("about.md", "Linguagens (em desenvolvimento): " + SKILLS.learning.join(", "));
   PROJECTS.forEach(function(p){
     add("projects.json", p.name + " · " + p.stack + " · " + p.tags.join(", "));
     add("projects.json", p.desc);
   });
-  CONCEPTS.forEach(function(c){ add("skills.ts", "Conceito: " + c); });
-  TOOL_SKILLS.forEach(function(s){ add("skills.ts", s.name + " — " + s.lvl + "%"); });
   CONTACTS.forEach(function(c){ add("contact.js", c.label + ": " + c.value); });
 })();
 
@@ -1064,7 +1157,7 @@ function analyze(fid){
     var m;
     if ((m = t.match(/^\s*(#+)\s+(.+)$/)))                                   { syms.push({line:i,label:m[2].trim(),kind:"h"}); return; }
     if ((m = t.match(/^\s*(?:export default\s+)?(?:async\s+)?function\s+([\w$]+)/))) { syms.push({line:i,label:m[1],kind:"fn"}); return; }
-    if ((m = t.match(/^\s*(?:const|let|var)\s+([\w$]+)/)))                    { syms.push({line:i,label:m[1],kind:"var"}); return; }
+    if ((m = t.match(/^\s*(?:export\s+)?(?:const|let|var)\s+([\w$]+)/)))                  { syms.push({line:i,label:m[1],kind:"var"}); return; }
     if ((m = t.match(/^\s*"name"\s*:\s*"([^"]+)"/)))                         { syms.push({line:i,label:m[1],kind:"obj"}); return; }
     if ((m = t.match(/^\s{0,3}"([\w-]+)"\s*:/)))                             { syms.push({line:i,label:m[1],kind:"prop"}); return; }
   });
@@ -1183,7 +1276,6 @@ function renderEditor(){
   el.mmSlider = $("mm-slider");
 
   el.rich.innerHTML = renderRich(fid);
-  armSkillBars();
 
   document.title = fid + " — Igor Alves";
   el.scroll.scrollTop = 0;
@@ -1329,17 +1421,21 @@ function minimapJump(clientY){
 }
 
 /* Painéis "rendered view" */
-function skillBar(s){
-  return '<div class="skill"><div class="skill-head"><span style="color:'+s.color+'">'+esc(s.name)+'</span>'+
-         '<span class="pct">'+s.lvl+'%</span></div>'+
-         '<div class="skill-track"><div class="skill-fill" data-lvl="'+s.lvl+'" style="background:'+s.color+'"></div></div></div>';
+function badge(text, color, extra){
+  return '<span class="badge'+(extra ? " "+extra : "")+'" style="color:'+color+';border-color:color-mix(in srgb,'+color+' 40%,transparent);'+
+         'background:color-mix(in srgb,'+color+' 10%,transparent)">'+esc(text)+'</span>';
+}
+function languageTiers(){
+  return '<div class="tier"><span class="tier-k">uso no dia a dia</span><span class="tags">'+
+           SKILLS.daily.map(function(s){ return badge(s.name, s.color); }).join("")+'</span></div>'+
+         '<div class="tier"><span class="tier-k">em desenvolvimento</span><span class="tags">'+
+           SKILLS.learning.map(function(s){ return badge(s, "var(--text-dim)", "learning"); }).join("")+'</span></div>';
 }
 function renderRich(file){
   var L = '<div class="rich-label">// rendered view</div>';
   if (file === "about.md"){
     return '<div class="rich">'+L+
-      '<div style="margin-bottom:32px"><h4>LINGUAGENS</h4><div class="grid-skills">'+LANG_SKILLS.map(skillBar).join("")+'</div></div>'+
-      '<div style="margin-bottom:32px"><h4>FERRAMENTAS</h4><div class="grid-skills">'+TOOL_SKILLS.map(skillBar).join("")+'</div></div>'+
+      '<div style="margin-bottom:32px"><h4>LINGUAGENS</h4>'+languageTiers()+'</div>'+
       '<div><h4>EXPERIÊNCIA</h4><div style="display:flex;flex-direction:column;gap:2px">'+
       EXPERIENCE.map(function(e,i){
         return '<details class="exp" style="border-left-color:'+e.color+'"'+(i===0?" open":"")+'>'+
@@ -1358,23 +1454,25 @@ function renderRich(file){
                '<span class="stack">'+esc(p.stack)+'</span></div><p>'+esc(p.desc)+'</p><div class="tags">'+
                p.tags.map(function(t){
                  return '<span class="badge" style="color:'+p.color+';border-color:color-mix(in srgb,'+p.color+' 40%,transparent);background:color-mix(in srgb,'+p.color+' 10%,transparent);font-size:10px">'+esc(t)+'</span>';
-               }).join("")+'</div></article>';
+               }).join("")+'</div>'+
+               (p.repo ? '<a class="card-link" href="https://'+esc(p.repo)+'" target="_blank" rel="noopener">'+
+                         ICO.repo+'<span>'+esc(p.repo.replace(/^github\.com\//, ""))+' ↗</span></a>' : '')+
+               '</article>';
       }).join("")+'</div></div>';
   }
   if (file === "skills.ts"){
     return '<div class="rich">'+L+
-      '<h4>LINGUAGENS</h4><div class="grid-skills wide">'+LANG_SKILLS.map(skillBar).join("")+'</div>'+
-      '<h4 style="margin-top:24px">FERRAMENTAS</h4><div class="grid-skills wide">'+TOOL_SKILLS.map(skillBar).join("")+'</div>'+
-      '<div style="margin-top:24px"><h4 style="margin-bottom:12px">CONCEITOS</h4><div class="tags">'+
-      CONCEPTS.map(function(c){
-        return '<span class="badge" style="color:var(--text-dim);border-color:var(--border)">'+esc(c)+'</span>';
-      }).join("")+'</div></div></div>';
+      '<div class="skill-group"><h4>LINGUAGENS</h4>'+languageTiers()+'</div>'+
+      SKILLS.groups.map(function(g){
+        return '<div class="skill-group"><h4>'+esc(g.title.toUpperCase())+'</h4><div class="tags">'+
+               g.items.map(function(it){ return badge(it, g.color); }).join("")+'</div></div>';
+      }).join("")+'</div>';
   }
   if (file === "contact.js"){
     return '<div class="rich">'+L+'<div class="contact-list">'+
       CONTACTS.map(function(c){
         var v = c.href
-          ? '<a class="v" style="color:'+c.color+'" href="'+c.href+'"'+(c.href.indexOf("http")===0?' target="_blank" rel="noopener"':'')+'>'+esc(c.value)+'</a>'
+          ? '<a class="v" style="color:'+c.color+'" href="'+c.href+'"'+(c.href.indexOf("http")===0||c.newTab?' target="_blank" rel="noopener"':'')+'>'+esc(c.value)+'</a>'
           : '<span class="v" style="color:'+c.color+'">'+esc(c.value)+'</span>';
         return '<div class="contact-row"><span class="k">'+esc(c.label)+'</span>'+v+'</div>';
       }).join("")+
@@ -1382,23 +1480,6 @@ function renderRich(file){
       '<span class="pulse" style="width:7px;height:7px"></span>open to internship opportunities</span></div></div></div>';
   }
   return "";
-}
-
-var skillObserver = null;
-function armSkillBars(){
-  var fills = el.rich.querySelectorAll(".skill-fill");
-  if (!fills.length) return;
-  if (!("IntersectionObserver" in window)){
-    Array.prototype.forEach.call(fills, function(f){ f.style.width = f.dataset.lvl + "%"; });
-    return;
-  }
-  if (skillObserver) skillObserver.disconnect();
-  skillObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting){ e.target.style.width = e.target.dataset.lvl + "%"; skillObserver.unobserve(e.target); }
-    });
-  }, { threshold:0.2, root:el.scroll });
-  Array.prototype.forEach.call(fills, function(f){ skillObserver.observe(f); });
 }
 
 function renderTabs(){
@@ -1485,7 +1566,9 @@ function viewExplorer(){
     h += TREE_FILES.map(function(f){
       return '<div class="tree-row'+(state.active===f?" active":"")+'" data-file="'+f+'" role="button" tabindex="0" style="padding-left:22px">'+
              fileIcon(f,16)+'<span class="lbl">'+f+'</span></div>';
-    }).join("");
+    }).join("") +
+    '<div class="tree-row" data-cv="1" role="button" tabindex="0" style="padding-left:22px" title="Abrir currículo em nova aba">'+
+      fileIcon(CV_FILE,16)+'<span class="lbl">'+CV_FILE+'</span><span class="sub">↗</span></div>';
   }
 
   h += '<div class="section-title'+(state.outlineOpen?"":" closed")+'" data-toggle="outline" role="button" tabindex="0" aria-expanded="'+state.outlineOpen+'" style="margin-top:10px">'+ICO.chevD+'OUTLINE</div>';
@@ -1602,6 +1685,8 @@ var CMDS = [
   { id:"terminal.new", label:"Focus Terminal", cat:"Terminal", key:"Ctrl+`", run:function(){ setPanel("terminal"); el.termInput.focus(); } },
   { id:"terminal.clear", label:"Clear Terminal", cat:"Terminal", key:"", run:function(){ termLines=[]; paintTerm(); setPanel("terminal"); } },
   { id:"help.readme", label:"Open readme.md", cat:"Help", key:"", run:function(){ openFile("readme.md", false); } },
+  { id:"contact.cv", label:"Open Resume (PDF)", cat:"Igor", key:"", run:function(){ openCV(false); } },
+  { id:"contact.cvDownload", label:"Download Resume (PDF)", cat:"Igor", key:"", run:function(){ openCV(true); } },
   { id:"contact.email", label:"Send Email to Igor", cat:"Igor", key:"", run:function(){ window.location.href = "mailto:igoralvesrodrigues12@gmail.com"; } },
   { id:"contact.github", label:"Open GitHub Profile", cat:"Igor", key:"", run:function(){ window.open("https://github.com/igordev-exe","_blank","noopener"); } },
   { id:"contact.linkedin", label:"Open LinkedIn Profile", cat:"Igor", key:"", run:function(){ window.open("https://linkedin.com/in/igordev-exe","_blank","noopener"); } }
@@ -1654,11 +1739,15 @@ function qiItems(raw){
     return [{ html:"Ir para linha <b>"+n+"</b> em "+esc(state.active), key:"Enter", score:0,
               act:function(){ revealLine(state.active, n-1); } }];
   }
-  return TREE_FILES.map(function(f){
+  var files = TREE_FILES.map(function(f){
     var m = fuzzy(v.trim(), f);
     return m ? { html:fileIcon(f,15)+'<span class="qi-lbl">'+mark(f, m.idx)+'</span><span class="qi-sub">'+FILES[f].lang+'</span>',
                  key:"", score:m.score, act:function(){ openFile(f, true); } } : null;
-  }).filter(Boolean).sort(function(a,b){ return b.score - a.score; });
+  });
+  var mcv = fuzzy(v.trim(), CV_FILE);
+  files.push(mcv ? { html:fileIcon(CV_FILE,15)+'<span class="qi-lbl">'+mark(CV_FILE, mcv.idx)+'</span><span class="qi-sub">PDF · nova aba</span>',
+                     key:"", score:mcv.score, act:function(){ openCV(false); } } : null);
+  return files.filter(Boolean).sort(function(a,b){ return b.score - a.score; });
 }
 
 function openQuick(prefix){
@@ -1718,6 +1807,7 @@ var MENUS = [
       { cmd:"workbench.quickOpen", label:"Open File..." },
       { sep:1 },
       { file:"about.md" }, { file:"projects.json" }, { file:"skills.ts" }, { file:"contact.js" },
+      { cmd:"contact.cv", label:CV_FILE },
       { sep:1 },
       { cmd:"editor.close", label:"Close Editor" },
       { label:"Save", key:"Ctrl+S", disabled:1 }
@@ -1764,6 +1854,7 @@ var MENUS = [
   { label:"Help", items:[
       { cmd:"help.readme", label:"Welcome (readme.md)" },
       { sep:1 },
+      { cmd:"contact.cv", label:"Resume (PDF)" },
       { cmd:"contact.email", label:"Send Email to Igor" },
       { cmd:"contact.github", label:"GitHub Profile" },
       { cmd:"contact.linkedin", label:"LinkedIn Profile" }
@@ -1915,8 +2006,9 @@ var OUT_CHANNELS = {
     { t:"✓ built in 612ms", c:"var(--green)" }
   ],
   git:[
-    { t:"> git log --oneline -4", c:"var(--text-dim)" },
+    { t:"> git log --oneline -5", c:"var(--text-dim)" },
     { t:"" },
+    { t:"e4b8d52 feat: cv command + new resume" },
     { t:"a7f3c21 feat: minimap + sticky scroll" },
     { t:"3d90b14 fix: update about.md" },
     { t:"c1e5f88 feat: skills.ts + panel" },
@@ -1979,6 +2071,7 @@ var FILE_MAP = {
   "contact":"contact.js", "contact.js":"contact.js",
   "readme":"readme.md", "readme.md":"readme.md"
 };
+var CV_ALIASES = ["cv", "curriculo", "currículo", "resume", CV_FILE];
 var HELP_LINES = [
   { text:"Available commands:", color:"var(--cyan)" },
   { text:"  ls                — list files" },
@@ -1988,19 +2081,29 @@ var HELP_LINES = [
   { text:"  theme <name>      — dark | light | monokai" },
   { text:"  whoami            — about me" },
   { text:"  status            — availability" },
+  { text:"  cv                — open my resume (PDF)" },
+  { text:"  cv --download     — download the resume" },
   { text:"  clear             — clear terminal" },
   { text:"  help              — show this message" }
 ];
 var termLines = [
   { text:"igor-portfolio — terminal v2.0.0", color:"var(--green)" },
-  { text:'Type "help" for available commands.  ·  Ctrl+P abre arquivos.', color:"var(--text-dim)" },
+  { text:'Type "help" for available commands.  ·  "cv" abre meu currículo.  ·  Ctrl+P abre arquivos.', color:"var(--text-dim)" },
   { text:"" }
 ];
 var cmdHist = [], histIdx = -1;
 
 function paintTerm(){
   el.termHistory.innerHTML = termLines.map(function(l){
-    return '<div style="color:'+(l.color||"var(--text)")+'">'+esc(l.text)+'</div>';
+    var body = esc(l.text);
+    /* linha com link: só o trecho "link" vira <a>, o resto continua texto */
+    if (l.href && l.link){
+      var i = l.text.indexOf(l.link);
+      body = esc(l.text.slice(0, i))+
+             '<a href="'+esc(l.href)+'" target="_blank" rel="noopener" style="color:var(--blue)">'+esc(l.link)+'</a>'+
+             esc(l.text.slice(i + l.link.length));
+    }
+    return '<div style="color:'+(l.color||"var(--text)")+'">'+body+'</div>';
   }).join("");
   el.termBody.scrollTop = el.termBody.scrollHeight;
 }
@@ -2020,18 +2123,37 @@ function runTerm(raw){
 
   if (cmd === "whoami"){
     push({ text:"Igor Alves", color:"var(--cyan)" },
-         { text:"Estudante de Engenharia de Software — UnB/FGA" },
-         { text:"Brasília, DF · Foco em front-end e prototipação" }, { text:"" });
+         { text:"Estudante de Engenharia de Software — UnB/FGA, 3º semestre" },
+         { text:"Brasília, DF · Desenvolvimento de Software, IA aplicada e UI/UX" },
+         { text:"Pesquisador PIBIC (PPGDH/CEAM) · Monitor de Humanidades e Cidadania" }, { text:"" });
     return;
   }
   if (cmd === "status"){
     push({ text:"● open to internship opportunities", color:"var(--green)" },
-         { text:"  Front-end developer · Fullstack · UX/UI", color:"var(--text-dim)" },
-         { text:"  igoralvesrodrigues12@gmail.com", color:"var(--text-dim)" }, { text:"" });
+         { text:"  Estágio em desenvolvimento de software", color:"var(--text-dim)" },
+         { text:"  Grade flexível · remoto (preferência) ou híbrido", color:"var(--text-dim)" },
+         { text:"  igoralvesrodrigues12@gmail.com", color:"var(--text-dim)" },
+         { text:'  Currículo: digite "cv"', color:"var(--text-dim)" }, { text:"" });
     return;
   }
   if (cmd === "ls" || cmd.indexOf("ls ") === 0){
-    push({ text:"about.md   projects.json   skills.ts   contact.js   readme.md", color:"var(--yellow)" }, { text:"" });
+    push({ text:"about.md   projects.json   skills.ts   contact.js   readme.md   "+CV_FILE, color:"var(--yellow)" }, { text:"" });
+    return;
+  }
+  var cvParts = cmd.split(/\s+/);
+  if (CV_ALIASES.indexOf(cvParts[0]) >= 0 ||
+      (/^(cat|open)$/.test(cvParts[0]) && CV_ALIASES.indexOf(cvParts[1]) >= 0)){
+    var flag = cvParts[0] === "cat" || cvParts[0] === "open" ? cvParts[2] : cvParts[1];
+    if (flag && flag !== "--download" && flag !== "-d"){
+      push({ text:"uso: cv            abre o currículo em nova aba", color:"var(--pink)" },
+           { text:"     cv --download baixa o PDF", color:"var(--pink)" }, { text:"" });
+      return;
+    }
+    var dl = !!flag;
+    push({ text:(dl ? "→ Baixando " : "→ Abrindo ")+CV_FILE+(dl ? "" : " em nova aba…"), color:"var(--text-dim)" },
+         { text:(dl ? "  Não baixou? " : "  Não abriu? ")+"Clique: "+CV_FILE, link:CV_FILE, href:CV_URL, color:"var(--text-dim)" },
+         { text:"" });
+    openCV(dl);
     return;
   }
   if (/^theme(\s|$)/.test(cmd)){
@@ -2123,6 +2245,7 @@ el.sideScroll.addEventListener("click", function(e){
     else state.outlineOpen = !state.outlineOpen;
     renderSidebar(); return;
   }
+  if (e.target.closest("[data-cv]")){ openCV(false); return; }
   var goTo = e.target.closest("[data-goto]");
   if (goTo){ revealLine(state.active, +goTo.dataset.goto); return; }
   var openLine = e.target.closest("[data-open]");
